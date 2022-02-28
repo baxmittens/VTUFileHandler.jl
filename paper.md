@@ -50,8 +50,8 @@ A three-dimensional quadrilian mesh with 27 points and 8 cells with a linear ram
 # Features
 
 
-Solarized dark             |  Solarized Ocean
+				           | 
 :-------------------------:|:-------------------------:
-![](xramp1.PNG){ width=20% }  |  ![](xramp2.PNG){ width=20% }
+![test1](xramp1.PNG){ width=45% }  |  ![test2](xramp2.PNG){ width=45% }
 
 # References
