@@ -21,11 +21,11 @@ With increasing computing resources, the investigation of uncertainties in simul
 
 # Introduction
 
-Consider a computational model $\mathcal{M}$, providing an output-vector $\mathbf{Y}$ for a given set of inputs $\mathbf{X}$:
+Consider a discrete computational model $\mathcal{M}$, providing an output-vector $\mathbf{Y}$ for a given set of inputs $\mathbf{X}$:
 $$
-\mathbf{Y} = \mathcal{M}(\mathbf{})\;.
+\mathbf{Y} = \mathcal{M}(\mathbf{X})\;.
 $$
-
+The output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result, for example. For simplicity the input parameters are considers to be a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$.
 # Mathematics
 
 Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
