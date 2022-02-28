@@ -5,5 +5,5 @@ A VTU library in the Julia language that implements an algebra for basic mathema
 
 ```julia
 import Pkg
-Pkg.add("https://github.com/baxmittens/XMLParser.git")
+Pkg.add(url="https://github.com/baxmittens/XMLParser.git")
 ```
