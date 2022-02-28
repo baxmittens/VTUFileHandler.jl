@@ -10,8 +10,14 @@ const vtukeywords = VTUKeyWords(interpolation_keywords,uncompress_keywords)
 
 function set_uncompress_keywords(uk::Vector{String})
 	vtukeywords.uncompress_keywords = uk
+	for k in uk
+		push!(vtukeywords.uncompress_keywords, "\""*k*"\"")
+	end
 end
 
 function set_interpolation_keywords(ik::Vector{String})
 	vtukeywords.interpolation_keywords = ik
+	for k in ik
+		push!(vtukeywords.interpolation_keywords, "\""*k*"\"")
+	end
 end
