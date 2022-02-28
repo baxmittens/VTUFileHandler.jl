@@ -1,5 +1,5 @@
 name = "VTUFileHandler"
-uuid = "eb9583e3-384f-4738-97f6-e0a55d6e32a0"
+uuid = "6e9f8158-41af-4c42-b493-3202dfdd0db4"
 authors = ["Max Bittens <maximilian.bittens@bgr.de>"]
 license = "MIT"
 version = "0.0.9"
