@@ -1,6 +1,5 @@
 name = "VTUFileHandler"
 uuid = "6e9f8158-41af-4c42-b493-3202dfdd0db4"
-authors = ["Max Bittens <maximilian.bittens@bgr.de>"]
 version = "0.0.11"
 
 [deps]
