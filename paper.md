@@ -22,20 +22,27 @@ With increasing computing resources, the investigation of uncertainties in simul
 # Introduction
 
 Consider a discrete computational model $\mathcal{M}$, providing an output-vector $\mathbf{Y}$ for a given set of inputs $\mathbf{X}$:
-$$
+\begin{equation}\label{eq:discr}
 \mathbf{Y} = \mathcal{M}(\mathbf{X})\;.
-$$
-The output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result, for example. For simplicity the input parameters are considers to be a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$.
+\end{equation}
+The output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result, for example. The input parameters are considers to be a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$, and for simplicity, the set is reduced to a \textit{singleton} ($N=1$). Equation (\ref{eq:discr}) is called the \textit{deterministic case}.\\
+As a next step, we introduce a parametric variation $X:=X(\xi)$, $\xi\in[0,1]$, which maps the input from a minimum to a maximum value. Then we refer to as parametric case:
+\begin{equation}\label{eq:stoch}
+\mathbf{Y}(\xi) = \mathcal{M}(\mathbf{X}(\xi))\;.
+\end{equation}
+
+
+
 # Mathematics
 
 Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
 
 Double dollars make self-standing equations:
 
-$$\Theta(x) = \left\{\begin{array}{l}
+\begin{equation}\Theta(x) = \left\{\begin{array}{l}
 0\textrm{ if } x < 0\cr
 1\textrm{ else}
-\end{array}\right.$$
+\end{array}\right.\end{equation}
 
 You can also use plain \LaTeX for equations
 \begin{equation}\label{eq:fourier}
