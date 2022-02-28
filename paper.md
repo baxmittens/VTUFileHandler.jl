@@ -50,8 +50,8 @@ A three-dimensional quadrilian mesh with 27 points and 8 cells with a linear ram
 # Features
 
 
-				           | 
+		1		           | 2
 :-------------------------:|:-------------------------:
-![test1](xramp1.PNG){ width=45% }  |  ![test2](xramp2.PNG){ width=45% }
+![test1](xramp1.PNG){ width=40% }  |  ![test2](xramp2.PNG){ width=40% }
 
 # References
