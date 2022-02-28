@@ -66,8 +66,6 @@ The following math operators are implemented:
 +(::VTUFile, ::VTUFile),+(::VTUFile, ::Number),
 -(::VTUFile, ::VTUFile),-(::VTUFile, ::Number),
 *(::VTUFile, ::VTUFile),*(::VTUFile, ::Number),
-/(::VTUFile, ::VTUFile),/(::VTUFile, ::Number),
-^(::VTUFile, ::Float64)
 ```
 
 
