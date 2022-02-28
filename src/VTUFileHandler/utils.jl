@@ -109,7 +109,7 @@ function update_xml!(vtufile::VTUFile)
 		type = eval(Meta.parse(_type))
 		_format = replace(getAttribute(el,"format"),"\""=>"")
 		_name = replace(getAttribute(el,"Name"),"\""=>"")
-		if findfirst(x->x==_name,interpolation_keywords) != nothing || findfirst(x->x==_name,uncompress_keywords) != nothing
+		if findfirst(x->x==_name,vtukeywords.interpolation_keywords) != nothing || findfirst(x->x==_name,vtukeywords.uncompress_keywords) != nothing
 			j+=1			
 			if _format == "appended"	
 				updateappendeddata!(i,j,el,appendeddata,data,offsets,type,headertype,compressed_dat)
@@ -204,8 +204,8 @@ function addPointData!(vtu::VTUFile,name::String,dat,interp_dat) #does only work
 	push!(vtu.data.idat,n)
 	push!(vtu.data.interp_data,interp_dat)
 	insert!(vtu.data.names,n,name)
-	push!(interpolation_keywords,name)
-	push!(interpolation_keywords,"\""*name*"\"")
+	push!(vtukeywords.interpolation_keywords,name)
+	push!(vtukeywords.interpolation_keywords,"\""*name*"\"")
 	vtu.dataarrays = getElements(vtu.xmlroot, "DataArray")
 	return nothing
 end

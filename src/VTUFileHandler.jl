@@ -56,7 +56,7 @@ mutable struct VTUData
 			type = eval(Meta.parse(_type))
 			_format = getAttribute(el,"format")
 			_name = getAttribute(el,"Name")
-			if findfirst(x->x==_name,interpolation_keywords) != nothing	|| findfirst(x->x==_name,uncompress_keywords) != nothing
+			if findfirst(x->x==_name,vtukeywords.interpolation_keywords) != nothing	|| findfirst(x->x==_name,vtukeywords.uncompress_keywords) != nothing
 				if _format == "appended" || _format == "\"appended\""
 					vtuheader = readappendeddata!(data,i,appendeddata,offsets,type,headertype,compressed_dat)
 				else
@@ -66,7 +66,7 @@ mutable struct VTUData
 				push!(header,vtuheader)				
 			end
 		end
-		idat = findall(map(y->findfirst(x->x==y,interpolation_keywords)!=nothing,names))
+		idat = findall(map(y->findfirst(x->x==y,vtukeywords.interpolation_keywords)!=nothing,names))
 		interp_data = data[idat]
 		return new(names,header,data,interp_data,idat)
 	end
