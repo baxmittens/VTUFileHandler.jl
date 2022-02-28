@@ -45,10 +45,12 @@ The [VTUFileHandler](https://github.com/baxmittens/VTUFileHandler) will eventual
 2. Operators can only be applied to VTU files with the same topology. The user must ensure that this condition is met.
 3. The data type of numerical fields of the VTU file for which operators should be applied have to be `Float64`.
 
-A three-dimensional quadrilian mesh with 27 points and 8 cells with a linear ramp in x-direction as a result file is used for demonstration.
+A three-dimensional quadrilian mesh with 27 points and 8 cells with a linear ramp in x-direction as a result file is used for demonstration (see \autoref{fig:1}).
 
 # Features
 
 
-![Plots demonstrating the usage of VTUinterface: Deconfinement curve extracted as time series from a PVD file of excavation simulation (left). Contour plot of pressure distribution generated with VTUinterface and matplotlibs `tricontourf()` shows thermal pressurization during the heating phase (right).\label{fig:1}](xramp1.PNG){ width=100% }
+![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG){ width=100% }
+
+
 # References
