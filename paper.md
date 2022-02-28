@@ -1,26 +1,13 @@
 ---
-title: 'Gala: A Python package for galactic dynamics'
+title: 'VTUFileHandler: A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data'
 tags:
-  - Python
-  - astronomy
-  - dynamics
-  - galactic dynamics
-  - milky way
+  - Julia
+  - VTK Unstructured Grid Files
+  - Stochastic/parametric post-processing of simulation results
 authors:
-  - name: Adrian M. Price-Whelan^[co-first author] # note this makes a footnote saying 'co-first author'
-    orcid: 0000-0000-0000-0000
-    affiliation: "1, 2" # (Multiple affiliations must be quoted)
-  - name: Author Without ORCID^[co-first author] # note this makes a footnote saying 'co-first author'
-    affiliation: 2
-  - name: Author with no affiliation^[corresponding author]
-    affiliation: 3
-affiliations:
- - name: Lyman Spitzer, Jr. Fellow, Princeton University
-   index: 1
- - name: Institution Name
-   index: 2
- - name: Independent Researcher
-   index: 3
+  - name: Maximilian Bittens
+    orcid: 0000-0001-9954-294X
+    affiliation: Federal Institute for Geosciences and Natural Resources (BGR)
 date: 13 August 2017
 bibliography: paper.bib
 
