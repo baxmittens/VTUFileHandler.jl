@@ -30,7 +30,7 @@ As a next step, we introduce a parametric variation $X:=X(\xi)$, $\xi\in[0,1]$, 
 \begin{equation}\label{eq:stoch}
 \mathbf{Y}(\xi) = \mathcal{M}(\mathbf{X}(\xi))\;.
 \end{equation}
-Since $Y(\xi)$ is no longer deterministic, further methods are required to discretize the \textit{sample space} and to post-process and visualize the results. Methods for uncertainty quantification can be found in \cite{gates2015multilevel} or \cite{sudret2017surrogate}, for example.
+Since $\mathbf{Y}(\xi)$ is no longer deterministic, further methods are required to discretize the \textit{sample space} and to post-process and visualize the results. Methods for uncertainty quantification can be found in `@gates2015multilevel` or `@sudret2017surrogate`, for example.
 
 
 # Mathematics
