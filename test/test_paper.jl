@@ -4,7 +4,8 @@ import VTUFileHandler: set_uncompress_keywords, set_interpolation_keywords, VTUF
 set_uncompress_keywords(["xRamp"])
 set_interpolation_keywords(["xRamp"])
 vtu = VTUFile("vox8.vtu");
-vtu /= 0.8;
+tmp = deepcopy(vtu)/4.0;
+vtu += tmp;
 vtu *= 4.0;
 vtu -= 2.0;
 vtu ^= 2.0;

@@ -35,7 +35,7 @@ The most prominent method for computing the expected value of the problem descri
 \mathbb{E}[\mathbf{Y}(\boldsymbol{\xi})] \approx \tilde{\mathbb{E}}[\mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))] = \frac{1}{M} \sum\limits_{i=1}^M \mathcal{M}(\mathbf{X}(\xi_i))\,,\quad
 \xi_i \sim \mathcal{U}(0,1)\,.
 \end{equation} 
-From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\xi_i)=\mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))$ is a deterministic VTU result file at position $\xi_i$ in the sample space, it is sufficient to implement the operators `+(VTU file,VTU file)` and `/(VTU file,Number)` to compute the expected value on the whole domain by help of the Monte-Carlo method.
+From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\xi_i)=\mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))$ is a deterministic VTU result file at position $\xi_i$ in the sample space, it is sufficient to implement the operators `+(::VTUFile,::VTUFile)` and `/(::VTUFile,::Number)` to compute the expected value on the whole domain by help of the Monte-Carlo method.
 
 # Preliminaries 
 
@@ -63,7 +63,11 @@ function set_interpolation_keywords(ik::Vector{String}) ...
 ```
 The following math operators are implemented:
 * ```julia 
-+(VTUFile, VTUFile)
++(::VTUFile, ::VTUFile),+(::VTUFile, ::Number),
+-(::VTUFile, ::VTUFile),-(::VTUFile, ::Number),
+*(::VTUFile, ::VTUFile),*(::VTUFile, ::Number),
+/(::VTUFile, ::VTUFile),/(::VTUFile, ::Number),
+^(::VTUFile, ::Float64)
 ```
 
 
