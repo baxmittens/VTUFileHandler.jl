@@ -17,7 +17,7 @@ bibliography: paper.bib
 
 # Abstract
 
-With increasing computing resources, the investigation of uncertainties in simulation results is becoming an increasingly important factor. To analyze those effects, a discrete numerical simulation is computed several times with different realizations of the input parameters to produce different outputs of the same model. The relevant stochastic or parametric output variables, such as mean value, expected value and variance, are often calculated and visualized only at selected individual points of the whole domain. This project aims to provide a simple way to perform stochastic/parametric post-processing of numerical simulations on the entire domain, here using the VTU file system and the julia language as an example.
+With increasing computing resources, the investigation of uncertainties in simulation results is becoming an increasingly important factor. To analyze those effects, a discrete numerical simulation is computed several times with different realizations of the input parameters to produce different outputs of the same model. The relevant stochastic or parametric output variables, such as mean value, expected value and variance, are often calculated and visualized only at selected individual points of the whole domain. This project aims to provide a simple way to perform stochastic/parametric post-processing of numerical simulations on the entire domain, here using the VTK unstructed grid (VTU) file system and the julia language as an example.
 
 # Introduction
 
@@ -25,8 +25,7 @@ Consider a discrete computational model $\mathcal{M}$, providing an output-vecto
 \begin{equation}\label{eq:discr}
 \mathbf{Y} = \mathcal{M}(\mathbf{X})\;.
 \end{equation}
-The output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result, for example. In this case, we consider the output to be a VTU-file. The input parameters are considers to be a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$, and for simplicity, the set is reduced to a \textit{singleton} ($N=1$). Equation (\ref{eq:discr}) is called the \textit{deterministic case}.\\
-As a next step, we introduce a parametric variation $X:=X(\boldsymbol{\xi})$, where $\xi$ maps the input from a minimum to a maximum value. Then we refer to as parametric (or if $\xi$ is a random variable with a propability density function, stochastic ) case:
+The output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result, for example. In this case, we consider the output to be a VTU file. The input parameters are considers to be a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$, and for simplicity, the set is reduced to a \textit{singleton} ($N=1$). Equation (\ref{eq:discr}) is called the \textit{deterministic case}. As a next step, we introduce a parametric variation $X:=X(\boldsymbol{\xi})$, where $\xi$ maps the input from a minimum to a maximum value. Then we refer to as parametric (or if $\xi$ is a random variable with a propability density function, stochastic ) case:
 \begin{equation}\label{eq:stoch}
 \mathbf{Y}(\xi) = \mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))\;.
 \end{equation}
@@ -39,49 +38,8 @@ The most prominent method for computing the expected value of the problem descri
 From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\xi_i)$ is a deterministic VTU result file at position $\xi_i$ in the sample space, it is sufficient to implement the operators `+(VTU-file,VTU-file)` and `/(VTU-file,Number)` to compute the expected value on the whole domain by help of the Monte-Carlo method.
 
 
-# Mathematics
+# Features
 
-Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
 
-Double dollars make self-standing equations:
-
-\begin{equation}\Theta(x) = \left\{\begin{array}{l}
-0\textrm{ if } x < 0\cr
-1\textrm{ else}
-\end{array}\right.\end{equation}
-
-You can also use plain \LaTeX for equations
-\begin{equation}\label{eq:fourier}
-\hat f(\omega) = \int_{-\infty}^{\infty} f(x) e^{i\omega x} dx
-\end{equation}
-and refer to \autoref{eq:fourier} from text.
-
-# Citations
-
-Citations to entries in paper.bib should be in
-[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-format.
-
-If you want to cite a software repository URL (e.g. something on GitHub without a preferred
-citation) then you can do it with the example BibTeX entry below for @fidgit.
-
-For a quick reference, the following citation commands can be used:
-- `@author:2001`  ->  "Author et al. (2001)"
-- `[@author:2001]` -> "(Author et al., 2001)"
-- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
-
-# Figures
-
-Figures can be included like this:
-![Caption for example figure.\label{fig:example}](figure.png)
-and referenced from text using \autoref{fig:example}.
-
-Figure sizes can be customized by adding an optional second parameter:
-![Caption for example figure.](figure.png){ width=20% }
-
-# Acknowledgements
-
-We acknowledge contributions from Brigitta Sipocz, Syrtis Major, and Semyeong
-Oh, and support from Kathryn Johnston during the genesis of this project.
 
 # References
