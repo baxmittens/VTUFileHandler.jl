@@ -2,7 +2,8 @@ module VTUHandler
 
 using Base64, CodecZlib
 #include(joinpath(".","XMLParser.jl"))
-import XMLParser
+using XMLParser
+
 include(joinpath(".","VTUFileHandler","defs.jl"))
 
 struct VTUHeader{T<:Union{UInt32,UInt64}}
