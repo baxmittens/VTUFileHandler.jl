@@ -1,4 +1,4 @@
 file = joinpath(".","pointheatsource.vtu")
 vtu = VTUFileHandler.VTUFile(file);
-tmp = similar(vtu.data)
+tmp = similar(vtu)
 vtu += tmp
