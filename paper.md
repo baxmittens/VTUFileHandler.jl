@@ -59,10 +59,10 @@ function set_uncompress_keywords(uk::Vector{String}) ...
 ```
 is called before reading the VTU file are uncompressed and can be altered. For applying math operators onto a data field, the field has to be registered by the function 
 ```julia
-function set_interpolation_keywords(ik::Vector{String}) ...
+function set_interpolation_keywords(ik::Vector{String}) ... end
 ```
 The following math operators are implemented:
-* ```julia 
+```julia 
 +(::VTUFile, ::VTUFile),+(::VTUFile, ::Number),
 -(::VTUFile, ::VTUFile),-(::VTUFile, ::Number),
 *(::VTUFile, ::VTUFile),*(::VTUFile, ::Number),
