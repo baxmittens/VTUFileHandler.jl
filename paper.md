@@ -45,9 +45,13 @@ The [VTUFileHandler](https://github.com/baxmittens/VTUFileHandler) will eventual
 2. Operators can only be applied to VTU files with the same topology. The user must ensure that this condition is met.
 3. The data type of numerical fields of the VTU file for which operators should be applied have to be `Float64`.
 
+A three-dimensional quadrilian mesh with 27 points and 8 cells with a linear ramp in x-direction as a result file is used for demonstration.
 
 # Features
 
 
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](xramp1.PNG)  |  ![](xramp2.PNG)
 
 # References
