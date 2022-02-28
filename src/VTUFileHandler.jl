@@ -1,5 +1,8 @@
+module VTUHandler
+
 using Base64, CodecZlib
-include(joinpath(".","XMLParser.jl"))
+#include(joinpath(".","XMLParser.jl"))
+import XMLParser
 include(joinpath(".","VTUFileHandler","defs.jl"))
 
 struct VTUHeader{T<:Union{UInt32,UInt64}}
@@ -96,7 +99,7 @@ mutable struct VTUFile
 	VTUFile(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data) = new(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,true)
 	VTUFile(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,compr_dat) = new(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,compr_dat)
 	function VTUFile(name::String)
-		state = IOState3(name);
+		state = IOState(name);
 		xmlroot = readXMLElement(state);
 		if !isempty(getElements(xmlroot,"FieldData"))
 			deletefieldata!(xmlroot)
@@ -129,3 +132,5 @@ end
 
 include(joinpath(".","VTUFileHandler","utils.jl"))
 include(joinpath(".","VTUFileHandler","vtufile_math.jl"))
+
+end #module VTUHandler
