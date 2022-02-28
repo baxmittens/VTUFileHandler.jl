@@ -7,10 +7,12 @@ tags:
 authors:
   - name: Maximilian Bittens
     orcid: 0000-0001-9954-294X
-    affiliation: Federal Institute for Geosciences and Natural Resources (BGR)
+    affiliation: 1
 date: 13 August 2017
 bibliography: paper.bib
-
+affiliations: 1
+ - name: Federal Institute for Geosciences and Natural Resources (BGR)
+   index: 1
 # Optional fields if submitting to a AAS journal too, see this blog post:
 # https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
 aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
