@@ -48,11 +48,8 @@ The [VTUFileHandler](https://github.com/baxmittens/VTUFileHandler) will eventual
 A three-dimensional quadrilian mesh with 27 points and 8 cells with a linear ramp in x-direction as a result file is used for demonstration.
 
 # Features
-![alt-text-1\label{fig:1}](xramp1.PNG "title-1"){ width=40% } ![alt-text-2\label{fig:1}](xramp1.PNG "title-2"){ width=40% }
 
-Caption for example figure.\label{fig:1}             |  Caption for example figure.\label{fig:2}
-:-------------------------:|:-------------------------:
-![](xramp1.PNG){ width=40% }  |  ![](xramp2.PNG){ width=40% }
 
-\autoref{fig:1} frefrev
+![Caption for example figure.\label{fig:fig1}](xramp1.PNG)
+and referenced from text using \autoref{fig:fig1}.
 # References
