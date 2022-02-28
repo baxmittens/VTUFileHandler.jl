@@ -2,21 +2,17 @@
 title: 'VTUFileHandler: A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data'
 tags:
   - Julia
-  - VTK Unstructured Grid Files
+  - VTK unstructered grid
   - Stochastic/parametric post-processing of simulation results
 authors:
   - name: Maximilian Bittens
     orcid: 0000-0001-9954-294X
-    affiliation: 1
-date: 13 August 2017
-bibliography: paper.bib
-affiliations: 1
+    affiliation: "1"
+affiliations:
  - name: Federal Institute for Geosciences and Natural Resources (BGR)
    index: 1
-# Optional fields if submitting to a AAS journal too, see this blog post:
-# https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
-aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
-aas-journal: Astrophysical Journal <- The name of the AAS journal.
+date: 28 February 2022
+bibliography: paper.bib
 ---
 
 # Summary
