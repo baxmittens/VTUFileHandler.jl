@@ -54,4 +54,5 @@ Caption for example figure.\label{fig:1}             |  Caption for example figu
 :-------------------------:|:-------------------------:
 ![](xramp1.PNG){ width=40% }  |  ![](xramp2.PNG){ width=40% }
 
+\autoref{fig:1} frefrev
 # References
