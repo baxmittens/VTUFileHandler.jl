@@ -17,15 +17,7 @@ bibliography: paper.bib
 
 # Summary
 
-The forces on stars, galaxies, and dark matter under external gravitational
-fields lead to the dynamical evolution of structures in the universe. The orbits
-of these bodies are therefore key to understanding the formation, history, and
-future state of galaxies. The field of "galactic dynamics," which aims to model
-the gravitating components of galaxies to study their structure and evolution,
-is now well-established, commonly taught, and frequently used in astronomy.
-Aside from toy problems and demonstrations, the majority of problems require
-efficient numerical tools, many of which require the same base code (e.g., for
-performing numerical orbit integration).
+With increasing computing resources, the investigation of uncertainties in simulation results is becoming an increasingly important factor. To analyze those effects, a discrete numerical simulation is computed several times with different realizations of the input parameters to produce different outputs of the same model. The relevant stochastic or parametric output variables, such as mean value, expected value and variance, are often calculated and visualized only at selected individual points of the whole domain. This project aims to provide a simple way to perform stochastic/parametric post-processing of numerical simulations on the entire domain, here using the VTU data system as an example.
 
 # Statement of need
 
