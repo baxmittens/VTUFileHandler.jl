@@ -45,12 +45,13 @@ The [VTUFileHandler](https://github.com/baxmittens/VTUFileHandler) will eventual
 2. Operators can only be applied to VTU files with the same topology. The user must ensure that this condition is met.
 3. The data type of numerical fields of the VTU file for which operators should be applied have to be `Float64`.
 
-A three-dimensional quadrilian mesh with 27 points and 8 cells with a linear ramp in x-direction as a result file is used for demonstration (see \autoref{fig:1}).
+A three-dimensional cube with dimension $(x,y,z)$ with $0<=x,y,z<=2$ discretized by quadrilian elements with 27 points and 8 cells with a linear ramp in x-direction ($f(x=0,y,z)=0$, $f(x=2,y,z)=0.8$) as a result field is used for demonstration (see \autoref{fig:1}).
 
 # Features
 
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG){ width=100% }
 
+#Conclusion
 
 # References
