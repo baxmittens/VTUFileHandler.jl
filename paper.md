@@ -50,6 +50,5 @@ A three-dimensional quadrilian mesh with 27 points and 8 cells with a linear ram
 # Features
 
 
-![Caption for example figure.\label{fig:fig1}](xramp1.PNG)
-and referenced from text using \autoref{fig:fig1}.
+![Plots demonstrating the usage of VTUinterface: Deconfinement curve extracted as time series from a PVD file of excavation simulation (left). Contour plot of pressure distribution generated with VTUinterface and matplotlibs `tricontourf()` shows thermal pressurization during the heating phase (right).\label{fig:1}](xramp1.PNG){ width=100% }
 # References
