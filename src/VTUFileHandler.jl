@@ -1,4 +1,4 @@
-module VTUHandler
+module VTUFileHandler
 
 using Base64, CodecZlib
 #include(joinpath(".","XMLParser.jl"))
