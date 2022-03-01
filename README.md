@@ -58,6 +58,7 @@ vtu += vtu/4; # [0.0,...,0.8] -> [0.0,...,1.0]
 vtu *= 4.0; # [0,...,1.0] -> [0.0,...,4.0]
 vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
 vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
+write(vtu)
 ```
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
