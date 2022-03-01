@@ -72,9 +72,6 @@ function min!(zd1::VTUDataField{Float64}, zd2::VTUDataField{Float64})
 	return nothing
 end
 
-
-
-
 function add!(zd1::VTUData, zd2::VTUData)
 	for (dat1,dat2) in zip(zd1.interp_data,zd2.interp_data)
 		add!(dat1,dat2)
