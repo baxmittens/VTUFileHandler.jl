@@ -19,6 +19,10 @@ bibliography: paper.bib
 
 With increasing computing resources, investigating uncertainties in simulation results is becoming an increasingly important factor. A discrete numerical simulation is computed several times with different deviations of the input parameters to produce different outputs of the same model to analyze those effects. The relevant stochastic or parametric output variables, such as mean, expected value, and variance, are often calculated and visualized only at selected individual points of the whole domain. This project aims to provide a simple way to perform stochastic/parametric post-processing of numerical simulations on entire domains using the VTK unstructured grid (VTU) file system and the Julia language as an example.
 
+# Statement of need
+
+To the authors knowledge, there is no library available, neither for the VTU result file-format nor any other simulation result file-format, which standardize stochastic/parametric post-processing. To this date, stochastic post-processing seems to be done purely proprietary. 
+
 # Introduction
 
 Consider a discrete computational model $\mathcal{M}$, providing an output-vector $\mathbf{Y}$ for a given set of inputs $\mathbf{X}$:
