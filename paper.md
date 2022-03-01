@@ -73,6 +73,7 @@ In-place variation of the operators above are implemented as well.
 
 A three-dimensional cube with dimension $(x,y,z)$ with $0<=x,y,z<=2$ discretized by quadrilian elements with 27 points and 8 cells named `vox8.vtu` with a linear ramp in x-direction ($f(x=0,y,z)=0$, $f(x=2,y,z)=0.8$) as a result field with the termed `xramp` will be used as an example (see \autoref{fig:1}).
 
+## Applying math operator to the example cube with attached result field
 ```julia
 set_uncompress_keywords(["xRamp"]) # uncrompress data field xramp
 set_interpolation_keywords(["xRamp"]) # apply math operators to xramp
