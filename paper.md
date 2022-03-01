@@ -63,7 +63,7 @@ before reading the VTU file are uncompressed and can be altered. For applying ma
 ```julia
 function set_interpolation_keywords(ik::Vector{String}) ... end
 ```
-The following math operators acting pointwise on nodal results are implemented:
+The following math operators acting point-wise on nodal results are implemented:
 ```julia 
 +(::VTUFile, ::VTUFile),+(::VTUFile, ::Number),
 -(::VTUFile, ::VTUFile),-(::VTUFile, ::Number),
