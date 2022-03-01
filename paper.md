@@ -93,6 +93,6 @@ The initial field and the resultant field of the above operations are displayed 
 
 A basic VTU library was implemented, which does not claim completeness in terms of VTU features. However, which feature set is complete are the implemented math operators sufficient to compute a complete parametric or stochastic post-processing of VTU files. This implementation can readily be used for this purpose or can be utilized as a template for extending a different VTU library.
 The quantification of uncertainties in coupled thermo-hydro-mechanical simulations can give an example of an application where this tool together with [ogs6py](https://github.com/joergbuchwald/ogs6py) and [OpenGeoSys](https://www.opengeosys.org/) [@buchwald2021ogs6py] 
-can be used to automate stochastic calculations fully.
+can be used to automate stochastic computations fully.
 
 # References
