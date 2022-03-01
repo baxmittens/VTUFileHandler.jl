@@ -13,7 +13,7 @@ Pkg.add(url="https://github.com/baxmittens/XMLParser.git")
 Pkg.add(url="https://github.com/baxmittens/VTUFileHandler.git")
 ```
 
-# Preliminaries 
+## Preliminaries 
 
 The VTUFileHandler will eventually be used to perform stochastic post-processing on large VTU result files. Therefore, the following assumptions have to be fulfilled for the software to work correctly:
 
