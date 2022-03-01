@@ -13,6 +13,14 @@ Pkg.add(url="https://github.com/baxmittens/XMLParser.git")
 Pkg.add(url="https://github.com/baxmittens/VTUFileHandler.git")
 ```
 
+# Preliminaries 
+
+The VTUFileHandler will eventually be used to perform stochastic post-processing on large VTU result files. Therefore, the following assumptions have to be fulfilled for the software to work correctly:
+
+1. The VTU file must be in binary format and, in addition, can be Zlib compressed.
+2. Operators can only be applied to VTU files sharing the same topology. The user must ensure that this condition is met.
+3. The data type of numerical fields of the VTU file, for which operators should be applied, have to be `Float64`.
+
 ## Usage
 
 The VTUFileHandler implements a basic VTU reader and writer through the functions:
