@@ -54,5 +54,5 @@ vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
 
 The initial field and the resultant field of the above operations are displayed in figure \autoref{fig:1}.
 
-![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG){ width=100% }
+![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
 
