@@ -25,7 +25,7 @@ To the authors knowledge, there is no library available, neither for the VTU res
 
 # Introduction
 
-Consider a discrete computational model $\mathcal{M}$, providing an output-vector $\mathbf{Y}$ for a given set of inputs $\mathbf{X}$:
+Consider a discrete computational model $\mathcal{M}$, providing a generic output $\mathbf{Y}$ for a given set of inputs $\mathbf{X}$:
 \begin{equation}\label{eq:discr}
 \mathbf{Y} = \mathcal{M}(\mathbf{X})\;.
 \end{equation}
