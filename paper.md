@@ -64,25 +64,29 @@ The following math operators are implemented:
 +(::VTUFile, ::VTUFile),+(::VTUFile, ::Number),
 -(::VTUFile, ::VTUFile),-(::VTUFile, ::Number),
 *(::VTUFile, ::VTUFile),*(::VTUFile, ::Number),
-^(::VTUFile, ::Number)
+/(::VTUFile, ::VTUFile),/(::VTUFile, ::Number),
+^(::VTUFile, ::Number),
 ```
+In-place variation of the operators above are implemented as well.
 
 # Example
 
 A three-dimensional cube with dimension $(x,y,z)$ with $0<=x,y,z<=2$ discretized by quadrilian elements with 27 points and 8 cells named `vox8.vtu` with a linear ramp in x-direction ($f(x=0,y,z)=0$, $f(x=2,y,z)=0.8$) as a result field with the termed `xramp` will be used as an example (see \autoref{fig:1}).
-
-Thus, for our example cube to work properly following calls have to be made
 ```julia
-set_uncompress_keywords(["xRamp"])
-set_interpolation_keywords(["xRamp"])
-vtu = VTUFile("vox8.vtu");
+set_uncompress_keywords(["xRamp"]) # uncrompress data field xramp
+set_interpolation_keywords(["xRamp"]) # register xramp for the application of math operators
+vtu = VTUFile("vox8.vtu"); # read the vtu
+vtu += vtu/4; # transform xramp from [0,0.8] to [0,1.0]
+vtu *= 4.0; # transform xramp from [0,...,1.0] to [0.0,...,4.0]
+vtu -= 2.0; # transform xramp from [0,...,4.0] to [-2.0,...,2.0]
+vtu ^= 2.0; # transform xramp from [-2.0,...,2.0] to [4.0,...,0.0,...,4.0]
 ```
-
-
-
+The initial field and the resultant field of the above operations is displayed in figure \autoref{fig:1}.
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG){ width=100% }
 
 #Conclusion
+
+
 
 # References
