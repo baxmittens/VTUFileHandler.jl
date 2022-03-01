@@ -25,7 +25,7 @@ Consider a discrete computational model $\mathcal{M}$, providing an output-vecto
 \begin{equation}\label{eq:discr}
 \mathbf{Y} = \mathcal{M}(\mathbf{X})\;.
 \end{equation}
-For example, the output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result. In this case, we consider the output to be a VTU file [@schroeder2000visualizing]. The input parameters are considered a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$, and for simplicity, the set is reduced to a \textit{singleton} ($N=1$). Equation (\ref{eq:discr}) is called the \textit{deterministic case}. As a next step, we introduce a parametric variation $\mathbf{X}:=\mathbf{X}(\boldsymbol{\xi})$, where $\boldsymbol{\xi}$ maps the inputs from a minimum to a maximum value. Then we refer to as parametric (or if $\xi_i$, $i\in{1,...,N}$ is a random variable with a probability  density function, stochastic ) case:
+For example, the output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result. In this case, we consider the output to be a VTU file [@schroeder2000visualizing]. The input parameters are considered a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$, and for simplicity, the set is reduced to a \textit{singleton} ($N=1$). Equation (\ref{eq:discr}) is called the \textit{deterministic case}. As a next step, we introduce a parametric variation $\mathbf{X}:=\mathbf{X}(\boldsymbol{\xi})$, where $\boldsymbol{\xi}$ maps the inputs from a minimum to a maximum value. Then we refer to as \texit{parametric} (or if $\xi_i$, $i\in{1,...,N}$ is a random variable with a probability  density function, \textit{stochastic} ) \textit{case}:
 \begin{equation}\label{eq:stoch}
 \mathbf{Y}(\boldsymbol{\xi}) = \mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))\;.
 \end{equation}
@@ -71,9 +71,7 @@ In-place variations of the operators above are implemented as well.
 
 # Example
 
-A three-dimensional cube with dimension $(x,y,z)$ with $0<=x,y,z<=2$ discretized by quadrilian elements with 27 points and 8 cells named `vox8.vtu` with a linear ramp in x-direction ($f(x=0,y,z)=0$, $f(x=2,y,z)=0.8$) as a result field with the termed `xramp` will be used as an example (see \autoref{fig:1}).
-
-## Applying math operations to the example cube with attached result field
+A three-dimensional cube with dimension $(x,y,z)$ with $0<=x,y,z<=2$ discretized by quadrilian elements with 27 points and 8 cells named `vox8.vtu` with a linear ramp in x-direction ($f(x=0,y,z)=0$, $f(x=2,y,z)=0.8$) as a result field termed `xramp` will be used as an example (see \autoref{fig:1}). The following set of instructions transform the result field from a linear ramp in x-direction to a quadratic function:
 ```julia
 set_uncompress_keywords(["xRamp"]) # uncrompress data field xramp
 set_interpolation_keywords(["xRamp"]) # apply math operators to xramp
