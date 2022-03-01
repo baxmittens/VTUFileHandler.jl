@@ -34,7 +34,7 @@ The following math operators are implemented:
 -(::VTUFile, ::VTUFile),-(::VTUFile, ::Number),
 *(::VTUFile, ::VTUFile),*(::VTUFile, ::Number),
 /(::VTUFile, ::VTUFile),/(::VTUFile, ::Number),
-^(::VTUFile, ::Number),
+^(::VTUFile, ::Number)
 ```
 In-place variations of the operators above are implemented as well.
 
