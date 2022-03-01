@@ -73,15 +73,15 @@ In-place variation of the operators above are implemented as well.
 
 A three-dimensional cube with dimension $(x,y,z)$ with $0<=x,y,z<=2$ discretized by quadrilian elements with 27 points and 8 cells named `vox8.vtu` with a linear ramp in x-direction ($f(x=0,y,z)=0$, $f(x=2,y,z)=0.8$) as a result field with the termed `xramp` will be used as an example (see \autoref{fig:1}).
 
-## Applying math operator to the example cube with attached result field
+## Applying math operations to the example cube with attached result field
 ```julia
 set_uncompress_keywords(["xRamp"]) # uncrompress data field xramp
 set_interpolation_keywords(["xRamp"]) # apply math operators to xramp
 vtu = VTUFile("vox8.vtu"); # read the vtu
-vtu += vtu/4; # transform xramp from [0,0.8] to [0,1.0]
-vtu *= 4.0; # transform xramp from [0,...,1.0] to [0.0,...,4.0]
-vtu -= 2.0; # transform xramp from [0,...,4.0] to [-2.0,...,2.0]
-vtu ^= 2.0; # transform xramp from [-2.0,...,2.0] to [4.0,...,0.0,...,4.0]
+vtu += vtu/4; # [0,0.8] -> [0,1.0]
+vtu *= 4.0; # [0,...,1.0] -> [0.0,...,4.0]
+vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
+vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
 ```
 The initial field and the resultant field of the above operations is displayed in figure \autoref{fig:1}.
 
