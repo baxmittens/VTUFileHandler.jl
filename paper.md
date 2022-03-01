@@ -21,7 +21,7 @@ With increasing computing resources, investigating uncertainties in simulation r
 
 # Statement of need
 
-To the authors knowledge, there is no library available, neither for the VTU result file-format nor any other simulation result file-format, which standardize stochastic/parametric post-processing. To this date, stochastic post-processing seems to be done purely proprietary. 
+To the authors knowledge, there is no library available, neither for the VTU result file-format nor any other simulation result file-format, which standardize stochastic/parametric post-processing. To this date, stochastic post-processing seems to be done purely proprietary. With this novel approach, stoachastic properties can be visualized on the whole domain using established software.
 
 # Introduction
 
