@@ -32,10 +32,10 @@ The output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element
 Since $\mathbf{Y}(\boldsymbol{\xi})$ is no longer deterministic, further methods are required to discretize the \textit{sample space} and to post-process and visualize the results. Different methods for uncertainty quantification can be found in @gates2015multilevel or @sudret2017surrogate, for example.
 The most prominent method for computing the expected value of the problem described in Equation (\ref{eq:stoch}) is the Monte-Carlo method:
 \begin{equation}\label{eq:montecarlo}
-\mathbb{E}[\mathbf{Y}(\boldsymbol{\xi})] \approx \tilde{\mathbb{E}}[\mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))] = \frac{1}{M} \sum\limits_{i=1}^M \mathcal{M}(\mathbf{X}(\boldsymbol{\xi}_i))\,,\quad
-\xi_{ij} \sim \mathcal{U}(0,1)\,.
+\mathbb{E}[\mathbf{Y}(\boldsymbol{\xi})] \approx \tilde{\mathbb{E}}[\mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))] = \frac{1}{M} \sum\limits_{i=1}^M \mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))\,,\quad
+\tilde{\xi}_{ij} \sim \mathcal{U}(0,1)\,.
 \end{equation} 
-From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\boldsymbol{\xi}_i)=\mathcal{M}(\mathbf{X}(\boldsymbol{\xi}_i))$ is a deterministic VTU result file at position $\boldsymbol{\xi}_i$ in the sample space, it is sufficient to implement the operators `+(::VTUFile,::VTUFile)` and `/(::VTUFile,::Number)` to compute the expected value on the whole domain by help of the Monte-Carlo method.
+From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\tilde{\boldsymbol{\xi}}_i)=\mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))$ is a deterministic VTU result file at position $\tilde{\boldsymbol{\xi}}_i$ in the sample space, it is sufficient to implement the operators `+(::VTUFile,::VTUFile)` and `/(::VTUFile,::Number)` to compute the expected value on the whole domain by help of the Monte-Carlo method.
 
 # Preliminaries 
 
