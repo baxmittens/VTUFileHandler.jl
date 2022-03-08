@@ -21,7 +21,7 @@ With increasing computing resources, investigating uncertainties in simulation r
 
 # Statement of need
 
-To the authors knowledge, there is no library available, neither for the VTU result file-format nor any other simulation result file-format, which standardize stochastic/parametric post-processing. To this date, this kind of \textit{meta} post-processing seems to be done purely proprietary. With this novel approach, stoachastic properties can be displayed on the whole domain using well established visualization software.
+To the authors knowledge, there is no library available, neither for the VTU result file-format nor any other simulation result file-format, which standardizes stochastic/parametric post-processing. To this date, this kind of \textit{meta} post-processing seems to be done by purely proprietary means. With this novel approach, stoachastic properties can be displayed on the whole domain using well established visualization software.
 
 # Introduction
 
@@ -29,7 +29,7 @@ Consider a discrete computational model $\mathcal{M}$, providing a generic outpu
 \begin{equation}\label{eq:discr}
 \mathbf{Y} = \mathcal{M}(\mathbf{X})\;.
 \end{equation}
-For example, the output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result. In this case, we consider the output to be a VTU file [@schroeder2000visualizing]. The input parameters are considered a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$, and for simplicity, the set is reduced to a \textit{singleton} ($N=1$). Equation (\ref{eq:discr}) is called the \textit{deterministic case}. As a next step, we introduce a parametric variation $\mathbf{X}:=\mathbf{X}(\boldsymbol{\xi})$, where $\boldsymbol{\xi}$ maps the inputs from a minimum to a maximum value. Then we refer to as \textit{parametric} (or if $\xi_i$, $i\in{1,...,N}$ is a random variable with a probability  density function, \textit{stochastic} ) \textit{case}:
+For example, the output $\mathbf{Y}$ can be a scalar, a vector, a matrix, or a finite-element post-processing result. In this case, we consider the output to be a VTU file [@schroeder2000visualizing]. The input parameters are considered a set of scalars $\mathbf{X}= \{X_1,...,X_N\}$, and for simplicity, the set is reduced to a \textit{singleton} ($N=1$). Equation (\ref{eq:discr}) is called the \textit{deterministic case}. As a next step, we introduce a parametric variation $\mathbf{X}:=\mathbf{X}(\boldsymbol{\xi})$, where $\boldsymbol{\xi}$ maps the inputs from a minimum to a maximum value. We refer to this problem formulation as the \textit{parametric} (or if $\xi_i$, $i\in{1,...,N}$ is a random variable with a probability  density function, \textit{stochastic} ) \textit{case}:
 \begin{equation}\label{eq:stoch}
 \mathbf{Y}(\boldsymbol{\xi}) = \mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))\;.
 \end{equation}
@@ -39,7 +39,7 @@ The most prominent method for computing the expected value of the problem descri
 \mathbb{E}[\mathbf{Y}(\boldsymbol{\xi})] \approx \tilde{\mathbb{E}}[\mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))] = \frac{1}{M} \sum\limits_{i=1}^M \mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))\,,\quad
 \tilde{\xi}_{ij} \sim \mathcal{U}(0,1)\,.
 \end{equation} 
-From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\tilde{\boldsymbol{\xi}}_i)=\mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))$ is a deterministic VTU result file at position $\tilde{\boldsymbol{\xi}}_i$ in the sample space, it is sufficient to implement the operators `+(::VTUFile,::VTUFile)` and `/(::VTUFile,::Number)` to compute the expected value on the whole domain by help of the Monte-Carlo method.
+From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\tilde{\boldsymbol{\xi}}_i)=\mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))$ is a deterministic VTU result file at position $\tilde{\boldsymbol{\xi}}_i$ in the sample space, it is sufficient to implement the operators `+(::VTUFile,::VTUFile)` and `/(::VTUFile,::Number)` to compute the expected value on the entire domain by help of the Monte-Carlo method.
 
 # Preliminaries 
 
@@ -63,7 +63,7 @@ before reading the VTU file are uncompressed and can be altered. For applying ma
 ```julia
 function set_interpolation_keywords(ik::Vector{String}) ... end
 ```
-The following math operators acting point-wise on nodal results are implemented:
+The following math operators acting point-wise on nodal results (point data) are implemented:
 ```julia 
 +(::VTUFile, ::VTUFile),+(::VTUFile, ::Number),
 -(::VTUFile, ::VTUFile),-(::VTUFile, ::Number),
@@ -75,7 +75,7 @@ In-place variations of the operators above are implemented as well.
 
 # Example
 
-A three-dimensional cube with dimension $(x,y,z)$ with $0<=x,y,z<=2$ discretized by quadrilian elements with 27 points and 8 cells named `vox8.vtu` with a linear ramp in x-direction ($f(x=0,y,z)=0$, $f(x=2,y,z)=0.8$) as a result field termed `xramp` will be used as an example (see \autoref{fig:1}). The following set of instructions transform the result field from a linear ramp to a quadratic function in x-direction (displayed as a piecewise linear field due to the discretization):
+A three-dimensional cube with dimension $(x,y,z)$ with $0\leq x,y,z \leq 2$ discretized by quadratic hexahedral elements with 27 points and 8 cells named `vox8.vtu` with a linear ramp in x-direction ($f(x=0,y,z)=0$, $f(x=2,y,z)=0.8$) as a result field termed `xramp` will be used as an example (see \autoref{fig:1}). The following set of instructions transforms the result field from a linear ramp to a quadratic function in $x$-direction (displayed as a piecewise linear field due to the discretization):
 ```julia
 set_uncompress_keywords(["xRamp"]) # uncrompress data field xramp
 set_interpolation_keywords(["xRamp"]) # apply math operators to xramp
@@ -91,8 +91,8 @@ The initial field and the resultant field of the above operations are displayed 
 
 # Conclusion
 
-A basic VTU library was implemented, which does not claim completeness in terms of VTU features. However, which feature set is complete are the implemented math operators sufficient to compute a complete parametric or stochastic post-processing of VTU files. This implementation can readily be used for this purpose or can be utilized as a template for extending a different VTU library.
-The quantification of uncertainties in coupled thermo-hydro-mechanical simulations can give an example of an application where this tool together with [ogs6py](https://github.com/joergbuchwald/ogs6py) and [OpenGeoSys](https://www.opengeosys.org/) [@buchwald2021ogs6py] 
-can be used to automate stochastic computations fully.
+A basic VTU library was implemented, which does not claim completeness in terms of VTU features. However, the implemented math operators constitute a complete feature set sufficient to compute a complete parametric or stochastic post-processing of VTU files. This implementation can readily be used for this purpose or can be utilized as a template for extending a different VTU library.
+The quantification of uncertainties in coupled thermo-hydro-mechanical simulations can serve as an example of an application where this tool together with [ogs6py](https://github.com/joergbuchwald/ogs6py) and [OpenGeoSys](https://www.opengeosys.org/) [@buchwald2021ogs6py] 
+can be used to fully automate stochastic computations.
 
 # References
