@@ -1,10 +1,19 @@
 module VTUFileHandler
 
 using Base64, CodecZlib
-#include(joinpath(".","XMLParser.jl"))
 using XMLParser
 
 include(joinpath(".","VTUFileHandler","defs.jl"))
+
+"""
+    VTUHeader(::Type{T},input::Vector{UInt8}) where {T<:Union{UInt32,UInt64}}
+
+Computes the VTUHeader based on the headertype and a Base64 decoded input data array.
+
+# Arguments
+- `::Type{T}`: headertype, either UInt32 or UInt64
+- `input::Vector{UInt8}`: input data
+"""	
 
 struct VTUHeader{T<:Union{UInt32,UInt64}}
 	num_blocks::T
