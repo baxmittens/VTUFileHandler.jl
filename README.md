@@ -1,5 +1,5 @@
 # VTUFileHandler
-A [VTU](https://vtk.org/) library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
+A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
 
 ## Introduction
 
