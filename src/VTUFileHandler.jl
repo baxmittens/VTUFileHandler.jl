@@ -97,6 +97,22 @@ function deletefieldata!(xmlroot)
 	appendeddata[1].content[1] = String(deleteat!(collect(appendeddata[1].content[1]),2:_offset+1))
 end
 
+"""
+    VTUFile(name::String)
+
+loads a VTU file.
+Don't forget to set the proper fieldnames via `set_uncompress_keywords` and `set_interpolation_keywords`
+Example
+`
+set_uncompress_keywords("temperature","points")
+set_interpolation_keywords("temperature")
+vtufile = VTUFile("./path-to-vtu/example.vtu");
+`
+
+# Arguments
+- `name::String`: path to vtu file
+"""	
+
 mutable struct VTUFile
 	name::String
 	xmlroot::XMLElement

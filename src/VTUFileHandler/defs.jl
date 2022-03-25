@@ -8,16 +8,34 @@ end
 
 const vtukeywords = VTUKeyWords(interpolation_keywords,uncompress_keywords)
 
+"""
+   set_uncompress_keywords(uk::Vector{String})
+
+Sets all fields that should be accessible and therefore needs to be uncompressed 
+
+# Arguments
+- `uk::Vector{String}`: fieldnames
+"""	
+
 function set_uncompress_keywords(uk::Vector{String})
 	vtukeywords.uncompress_keywords = uk
 	for k in copy(uk)
-		push!(vtukeywords.uncompress_keywords, "\""*k*"\"")
+		push!(vtukeywords.uncompress_keywords, "\""*k*"\"") #hack for downwards compatibility with older ogs6-versions
 	end
 end
+
+"""
+   set_interpolation_keywords(uk::Vector{String})
+
+Sets all fields onto which the math operators should be applied
+
+# Arguments
+- `ik::Vector{String}`: fieldnames
+"""	
 
 function set_interpolation_keywords(ik::Vector{String})
 	vtukeywords.interpolation_keywords = ik
 	for k in copy(ik)
-		push!(vtukeywords.interpolation_keywords, "\""*k*"\"")
+		push!(vtukeywords.interpolation_keywords, "\""*k*"\"") #hack for downwards compatibility with older ogs6-versions
 	end
 end

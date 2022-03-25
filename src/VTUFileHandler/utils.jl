@@ -1,3 +1,6 @@
+import TranscodingStreams
+import Dates
+
 function compressdat(vtuheader,dat,headertype,level=5)
 	compr_dat = Vector{UInt8}[]
 	bytedata = reinterpret(UInt8,dat)
@@ -26,7 +29,6 @@ function compressdat(vtuheader,dat,headertype,level=5)
 	return nvtuhead, vcat(compr_dat...)
 end
 
-import TranscodingStreams
 function updateappendeddata!(i,j,el,appendeddata,data,offsets,type,headertype,compressed_dat)
 	vtuheader = data.header[j]
 	dat = data.data[j].dat
@@ -124,7 +126,6 @@ function update_xml!(vtufile::VTUFile)
 	end
 end
 
-import Dates
 function timestamp()
 	str = string(Dates.unix2datetime(time()))
 	str = replace(str,"-"=>"_")
