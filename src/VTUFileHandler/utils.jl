@@ -50,7 +50,7 @@ function updateappendeddata!(i,j,el,appendeddata,data,offsets,type,headertype,co
 			appendeddata[1].content[1] = rawdat[1:offsets[i]+1]*base_head*base_dat
 		end
 	else
-		a = headertype(length(dat)*nbytes(type))
+		a = headertype(length(dat)*sizeof(type))
 		b = dat
 		aa = reinterpret(UInt8,[a])
 		bb = reinterpret(UInt8,b)
@@ -87,7 +87,7 @@ function updatedataarray!(i,j,el,data,offsets,type,headertype,compressed_dat)
 		base_dat = Base64.base64encode(compr_dat)
 		el.content[1] = base_head*base_dat
 	else
-		a = headertype(length(dat)*nbytes(type))
+		a = headertype(length(dat)*sizeof(type))
 		b = dat
 		aa = reinterpret(UInt8,[a])
 		bb = reinterpret(UInt8,b)
