@@ -43,7 +43,7 @@ From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\tilde{\boldsymbo
 
 # Preliminaries 
 
-The [VTUFileHandler](https://github.com/baxmittens/VTUFileHandler) will eventually be used to perform stochastic post-processing on large VTU result files. Therefore, the following assumptions have to be fulfilled for the software to work correctly:
+The [VTUFileHandler](https://github.com/baxmittens/VTUFileHandler.jl) will eventually be used to perform stochastic post-processing on large VTU result files. Therefore, the following assumptions have to be fulfilled for the software to work correctly:
 
 1. The VTU file must be in binary format and, in addition, can be Zlib compressed.
 2. Operators can only be applied to VTU files that share the same topology. The user must ensure that this condition is met.
