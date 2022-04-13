@@ -172,6 +172,12 @@ function Base.zero(vtu::VTUFile)
 	return ret
 end
 
+function Base.one(vtu::VTUFile)
+	ret = similar(vtu)
+	fill!(ret,1.0)
+	return ret
+end
+
 function Base.empty!(vtu::VTUFile)
 	for i = 1:length(vtu.data.data)
 		empty!(vtu.data.data[i].dat)

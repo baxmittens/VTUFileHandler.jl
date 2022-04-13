@@ -64,10 +64,22 @@ function +(tpf1::VTUFile, tpf2::VTUFile)
 	return ret
 end
 
+function +(tpf1::VTUFile)
+	ret = similar(tpf1)
+	add!(ret,tpf1)
+	return ret
+end
+
 function -(tpf1::VTUFile, tpf2::VTUFile)
 	ret = similar(tpf1)
 	add!(ret,tpf1)
 	minus!(ret,tpf2)
+	return ret
+end
+
+function -(tpf1::VTUFile)
+	ret = similar(tpf1)
+	minus!(ret,tpf1)
 	return ret
 end
 
@@ -126,3 +138,4 @@ function ^(tpf::VTUFile, a::T) where T<:Number
 	pow!(ret,a)
 	return ret
 end
+
