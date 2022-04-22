@@ -53,6 +53,14 @@ The most prominent method for computing the expected value of the problem descri
 \end{equation} 
 From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\tilde{\boldsymbol{\xi}}_i)=\mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))$ is a deterministic VTU result file at position $\tilde{\boldsymbol{\xi}}_i$ in the sample space, it is sufficient to implement the operators `+(::VTUFile,::VTUFile)` and `/(::VTUFile,::Number)` to compute the expected value on the entire domain by help of the Monte-Carlo method.
 
+# Definition of a VTUFile algebra
+
+Let $V=(\text{VTUFile},+,*)$ be a field and A \subseteq R^n a vector space over V. Then V is an algebra if for all x,y,z \in A and a,b \in V the following holds:
+
+(x+y) * z = x * z + y * z
+z * (x+y) = z * x + z * y
+(ax) * (bx) = (ab)(x * y)
+
 # Preliminaries 
 
 The [VTUFileHandler](https://github.com/baxmittens/VTUFileHandler.jl) will eventually be used to perform stochastic post-processing on large VTU result files. Therefore, the following assumptions have to be fulfilled for the software to work correctly:
