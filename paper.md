@@ -25,7 +25,7 @@ To the authors knowledge, there is no library available, neither for the VTU res
 
 # State of the field
 
-There are other approaches to writing and reading VTK/VTU files available in the Julia community. [WriteVTK.jl](https://github.com/jipolanco/WriteVTK.jl) is a package for the creation of VTK XML files from julia out of data already available in system memory. [ReadVTK.jl](https://github.com/trixi-framework/ReadVTK.jl) is a project primarily dedicated to read data written by WriteVTK.jl. Neither of those packages explicitly addresses reading, writing and manipulating generic VTU files.
+There are other approaches to writing and reading VTU, or more generally VTK, files available in the Julia community. [WriteVTK.jl](https://github.com/jipolanco/WriteVTK.jl) is a package for the creation of VTK XML files from julia out of data already available in system memory. [ReadVTK.jl](https://github.com/trixi-framework/ReadVTK.jl) is a project primarily dedicated to read data written by WriteVTK.jl. Neither of those packages explicitly addresses reading, writing and manipulating generic VTU files.
 
 # Introduction
 
