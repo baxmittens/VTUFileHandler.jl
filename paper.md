@@ -55,12 +55,17 @@ From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\tilde{\boldsymbo
 
 # Definition of a VTUFile algebra
 
-Let $V=(\text{VTUFile},+,*)$ be a field and $A \subseteq R^n$ a vector space over $V$. Then $V$ is an algebra if for all $x,y,z \in A$ and $a,b \in V$ the following holds:
+First we define an abstract VTUFile which represents the simulation results stored in memory as a series of coefficients of supporting points and can be thought of as a vector or matrix. As a next step, let $V=(\text{VTUFile},+,*)$ be a field and $A \subseteq R^n$ a vector space over $V$. Then $V$ is an algebra if for all $x,y,z \in A$ and $a,b \in V$ the following holds:
 \begin{align}
-(x+y) * z = x * z + y * z\\
-z * (x+y) = z * x + z * y\\
-(ax) * (bx) = (ab)(x * y)\\
+(x+y) * z &= x * z + y * z\\
+z * (x+y) &= z * x + z * y\\
+(ax) * (bx) &= (ab)(x * y)\\
 \end{align}
+
+The above obviously holds in general, if the $(*)$-operator acts point-wise:
+\begin{equation}
+(x*y)_i := x_i * y_i \quad \text{for all} x,y \in A
+\end{equation}
 
 # Preliminaries 
 
