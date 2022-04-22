@@ -17,11 +17,15 @@ bibliography: paper.bib
 
 # Abstract
 
-With increasing computing resources, investigating uncertainties in simulation results is becoming an increasingly important factor. A discrete numerical simulation is computed several times with different deviations of the input parameters to produce different outputs of the same model to analyze those effects. The relevant stochastic or parametric output variables, such as mean, expected value, and variance, are often calculated and visualized only at selected individual points of the whole domain. This project aims to provide a simple way to perform stochastic/parametric post-processing of numerical simulations on entire domains using the VTK unstructured grid (VTU) file system [@schroeder2000visualizing] and the Julia language [@bezanson2012julia] as an example.
+With increasing computing resources, investigating uncertainties in simulation results is becoming an increasingly important factor. Hereby, a deterministic simulation is computed several times with different deviations of the input parameters to produce a variety of outputs of the same model to analyze those effects. The relevant stochastic or parametric output variables, such as mean, expected value, and variance, are often calculated and visualized only at selected individual points of the whole domain. This project aims to provide a simple way to perform stochastic or parametric post-processing of simulations results on entire domains using the VTK unstructured grid (VTU) file system [@schroeder2006visualization] and the Julia language [@bezanson2012julia] as an example. The VTU file format is primarily used in conjunction with [Paraview](https://www.paraview.org/), an open-source, multi-platform data analysis and visualization tool, to display results of, e.g., structural or fluid mechanics simulations.
 
 # Statement of need
 
 To the authors knowledge, there is no library available, neither for the VTU result file-format nor any other simulation result file-format, which standardizes stochastic/parametric post-processing. To this date, this kind of \textit{meta} post-processing seems to be done by purely proprietary means. With this novel approach, stoachastic properties can be displayed on the whole domain using well established visualization software.
+
+# State of the field
+
+There are other approaches to writing and reading VTK/VTU files available in the Julia community. [WriteVTK.jl](https://github.com/jipolanco/WriteVTK.jl) is a package for the creation of VTK XML files from julia out of data already available in system memory. [ReadVTK.jl](https://github.com/trixi-framework/ReadVTK.jl) is a project primarily dedicated to read data written by WriteVTK.jl. Neither of those packages explicitly addresses reading, writing and manipulating generic VTU files.
 
 # Introduction
 
