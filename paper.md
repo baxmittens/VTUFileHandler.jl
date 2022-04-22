@@ -59,7 +59,7 @@ First we define an abstract VTUFile which represents the simulation results stor
 \begin{align}
 (x+y) * z &= x * z + y * z\\
 z * (x+y) &= z * x + z * y\\
-(ax) * (bx) &= (ab)(x * y)\\
+(ax) * (bx) &= (ab)(x * y)
 \end{align}
 
 The above obviously holds in general, if the $(*)$-operator acts point-wise:
