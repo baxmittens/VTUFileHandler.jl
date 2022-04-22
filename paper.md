@@ -64,7 +64,7 @@ z * (x+y) &= z * x + z * y\\
 
 The above obviously holds in general, if the $(*)$-operator acts point-wise:
 \begin{equation}
-(x*y)_i := x_i * y_i \quad \text{for all} x,y \in A
+(x*y)_i := x_i * y_i \quad \text{for all} \;\;  x,y \in A
 \end{equation}
 
 # Preliminaries 
