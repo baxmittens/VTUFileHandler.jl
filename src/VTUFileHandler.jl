@@ -157,4 +157,6 @@ end
 include(joinpath(".","VTUFileHandler","utils.jl"))
 include(joinpath(".","VTUFileHandler","vtufile_math.jl"))
 
+export VTUHeader, VTUFile
+
 end #module VTUHandler
