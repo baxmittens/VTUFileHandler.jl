@@ -15,8 +15,7 @@ Sets all fields that should be accessible and therefore needs to be uncompressed
 
 # Arguments
 - `uk::Vector{String}`: fieldnames
-"""	
-
+"""
 function set_uncompress_keywords(uk::Vector{String})
 	vtukeywords.uncompress_keywords = uk
 	for k in copy(uk)
@@ -31,8 +30,7 @@ Sets all fields onto which the math operators should be applied
 
 # Arguments
 - `ik::Vector{String}`: fieldnames
-"""	
-
+"""
 function set_interpolation_keywords(ik::Vector{String})
 	vtukeywords.interpolation_keywords = ik
 	for k in copy(ik)

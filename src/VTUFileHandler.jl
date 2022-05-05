@@ -14,7 +14,6 @@ Computes the VTUHeader based on the headertype and a Base64 decoded input data a
 - `::Type{T}`: headertype, either UInt32 or UInt64
 - `input::Vector{UInt8}`: input data
 """	
-
 struct VTUHeader{T<:Union{UInt32,UInt64}}
 	num_blocks::T
 	blocksize::T
@@ -49,7 +48,7 @@ struct VTUDataField{T}
 	VTUDataField(x::Base.ReinterpretArray{T, A, B, Vector{C}, D}) where {T,A,B,C,D} = new{T}(x)
 end
 
-mutable struct VTUData
+struct VTUData
 	names::Vector{String}
 	header::Vector{VTUHeader}
 	data::Vector{VTUDataField}
@@ -112,7 +111,6 @@ vtufile = VTUFile("./path-to-vtu/example.vtu");
 # Arguments
 - `name::String`: path to vtu file
 """	
-
 mutable struct VTUFile
 	name::String
 	xmlroot::XMLElement
