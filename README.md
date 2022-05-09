@@ -13,7 +13,7 @@ With increasing computing resources, investigating uncertainties in simulation r
 
 ```julia
 import Pkg
-Pkg.add(VTUFileHandler")
+Pkg.add("VTUFileHandler")
 ```
 
 ## Preliminaries 
