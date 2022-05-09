@@ -12,7 +12,7 @@ With increasing computing resources, investigating uncertainties in simulation r
 
 ```julia
 import Pkg
-Pkg.add(url="https://github.com/baxmittens/VTUFileHandler.jl.git")
+Pkg.add("VTUFileHandler")
 ```
 
 ## Preliminaries 

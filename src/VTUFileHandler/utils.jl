@@ -135,7 +135,7 @@ end
 
 
 """
-write(vtufile::VTUFile,add_timestamp::Bool=true)
+	write(vtufile::VTUFile,add_timestamp::Bool=true)
 
 Writes a VTUFile to destination `vtufile.name`
 
