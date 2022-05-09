@@ -157,6 +157,6 @@ end
 include(joinpath(".","VTUFileHandler","utils.jl"))
 include(joinpath(".","VTUFileHandler","vtufile_math.jl"))
 
-export VTUHeader, VTUFile
+export VTUHeader, VTUFile, set_uncompress_keywords, add_uncompress_keywords, set_interpolation_keywords, add_interpolation_keywords
 
 end #module VTUHandler
