@@ -133,7 +133,17 @@ function timestamp()
 	str = replace(str,"."=>"_")
 end
 
-function Base.write(vtufile::VTUFile,add_timestamp=true)
+
+"""
+write(vtufile::VTUFile,add_timestamp::Bool=true)
+
+Writes a VTUFile to destination `vtufile.name`
+
+# Arguments
+- `vtufile::VTUFile`: VTU file
+- `add_timestamp::Bool`: adds a timestamp to `vtufile.name` if `add_timestamp==true`
+"""
+function Base.write(vtufile::VTUFile, add_timestamp::Bool=true)
 	update_xml!(vtufile)
 	name = vtufile.name
 	if add_timestamp
