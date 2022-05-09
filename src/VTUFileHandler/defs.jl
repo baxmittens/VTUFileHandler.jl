@@ -9,7 +9,7 @@ end
 const vtukeywords = VTUKeyWords(interpolation_keywords,uncompress_keywords)
 
 """
-set_uncompress_keywords(uk::Vector{String})
+	set_uncompress_keywords(uk::Vector{String})
 
 Sets all fields that should be accessible and therefore needs to be uncompressed 
 
@@ -25,7 +25,7 @@ function set_uncompress_keywords(uk::Vector{String})
 end
 
 """
-add_uncompress_keywords(uk::Vector{String})
+	add_uncompress_keywords(uk::Vector{String})
 
 Adds fields that should be accessible and therefore needs to be uncompressed 
 
@@ -59,7 +59,7 @@ function set_interpolation_keywords(ik::Vector{String})
 end
 
 """
-add_interpolation_keywords(uk::Vector{String})
+	add_interpolation_keywords(uk::Vector{String})
 
 Adds fields onto which the math operators should be applied
 
