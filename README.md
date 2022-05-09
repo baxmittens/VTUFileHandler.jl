@@ -1,6 +1,10 @@
 # VTUFileHandler.jl
 A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
 
+See the [documentation](https://baxmittens.github.io/VTUFileHandler.jl/dev/):
+
+[![][docs-dev-img]][docs-dev-url]
+
 ## Introduction
 
 With increasing computing resources, investigating uncertainties in simulation results is becoming an increasingly important factor. A discrete numerical simulation is computed several times with different deviations of the input parameters to produce different outputs of the same model to analyze those effects. The relevant stochastic or parametric output variables, such as mean, expected value, and variance, are often calculated and visualized only at selected individual points of the whole domain. This project aims to provide a simple way to perform stochastic/parametric post-processing of numerical simulations on entire domains using the [VTK unstructured grid](https://vtk.org/) (VTU) [file system](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and the Julia language as an example.
@@ -62,3 +66,5 @@ write(vtu)
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
 
+[docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
+[docs-dev-url]: https://baxmittens.github.io/XMLParser.jl/dev/
