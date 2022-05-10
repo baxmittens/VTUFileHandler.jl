@@ -2,6 +2,7 @@
 A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
 
 ```@contents
+Pages = ["index.md", "lib/lib.md"]
 Depth = 3
 ```
 
@@ -66,32 +67,3 @@ write(vtu)
 ```
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
-
-
-## Function Documentation
-
-### Index
-
-```@index
-```
-
-### Functions
-
-```@docs
-VTUHeader
-VTUFileHandler.VTUDataField
-VTUFileHandler.VTUData
-VTUFile
-VTUFileHandler.VTUKeyWords
-```
-
-```@docs
-set_uncompress_keywords
-add_uncompress_keywords
-set_interpolation_keywords
-add_interpolation_keywords
-```
-
-```@docs
-write(::VTUFile, ::Bool)
-```

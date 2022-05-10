@@ -6,6 +6,7 @@ makedocs(
 	modules = [VTUFileHandler],
 	pages = [
 		"Home" => "index.md"
+		"Library" => "lib/lib.md"
 	]
 	)
 deploydocs(
