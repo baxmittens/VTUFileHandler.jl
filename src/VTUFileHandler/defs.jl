@@ -1,6 +1,26 @@
 interpolation_keywords = ["displacement","epsilon","pressure_interpolated","sigma","temperature_interpolated","\"displacement\"","\"epsilon\"","\"pressure_interpolated\"","\"sigma\"","\"temperature_interpolated\""]
 uncompress_keywords = ["connectivity","offsets","bulk_node_ids","bulk_element_ids","Points","MaterialIDs","\"connectivity\"","\"offsets\"","\"bulk_node_ids\"","\"bulk_element_ids\"","\"Points\"","\"MaterialIDs\"","types","\"types\""]
 
+"""
+    VTUKeyWords
+
+Container for interpolation and uncompress keywords. Will be created as a module-global constant value `vtukeywords`.
+
+# Fields
+- `interpolation_keywords::Vector{String}` : Vector with names of VTU fields onto which the math operators should apply 
+- `uncompress_keywords` : Vector with names of VTU field that should be uncompressed and stored in memory
+
+# Standard values
+
+By default, keywords were set that match results of the simulation software [OpenGeoSys](https://www.opengeosys.org/). 
+
+`interpolation_keywords = ["displacement","epsilon","pressure_interpolated","sigma","temperature_interpolated"]`
+`uncompress_keywords = ["connectivity","offsets","bulk_node_ids","bulk_element_ids","Points","MaterialIDs"]`
+
+# Example
+
+If a VTU result file e.g. owns a field named `field1` to which the math operators should be applied, it can be added via `add_interpolation_keywords(["field1"]])`.
+"""	
 mutable struct VTUKeyWords
 	interpolation_keywords::Vector{String}
 	uncompress_keywords::Vector{String}
@@ -43,7 +63,7 @@ function add_uncompress_keywords(uk::Vector{String})
 end
 
 """
-	set_interpolation_keywords(uk::Vector{String})
+	set_interpolation_keywords(ik::Vector{String})
 
 Sets all fields onto which the math operators should be applied
 
@@ -59,7 +79,7 @@ function set_interpolation_keywords(ik::Vector{String})
 end
 
 """
-	add_interpolation_keywords(uk::Vector{String})
+	add_interpolation_keywords(ik::Vector{String})
 
 Adds fields onto which the math operators should be applied
 

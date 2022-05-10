@@ -10,9 +10,15 @@ include(joinpath(".","VTUFileHandler","defs.jl"))
 
 Computes the VTUHeader based on the headertype and a Base64 decoded input data array.
 
-# Arguments
+# Constructor
 - `::Type{T}`: headertype, either UInt32 or UInt64
 - `input::Vector{UInt8}`: input data
+
+# Fields
+- `num_blocks::T` : number of blocks
+- `blocksize::T` : size of blocks
+- `last_blocksize::T` : size of last block (can be different)
+- `compressed_blocksizes::T` : size of compressed blocks
 """	
 struct VTUHeader{T<:Union{UInt32,UInt64}}
 	num_blocks::T
@@ -41,6 +47,17 @@ end
 include(joinpath(".","VTUFileHandler","vtuheader_utils.jl"))
 include(joinpath(".","VTUFileHandler","io.jl"))
 
+"""
+    VTUDataField(x::Vector{T}) where {T} = new{T}(x)
+
+Container for VTU field data.
+
+# Constructor
+- `x::Vector{T}`: Vector with VTU field data
+
+# Fields
+- `dat::Vector{T}` : VTU field data
+"""	
 struct VTUDataField{T}
 	dat::Vector{T}
 	VTUDataField(x::Vector{T}) where {T} = new{T}(x)
@@ -48,6 +65,30 @@ struct VTUDataField{T}
 	VTUDataField(x::Base.ReinterpretArray{T, A, B, Vector{C}, D}) where {T,A,B,C,D} = new{T}(x)
 end
 
+"""
+    VTUData(dataarrays::Vector{XMLElement},appendeddata::Vector{XMLElement},headertype::Union{Type{UInt32},Type{UInt64}},offsets::Vector{Int},compressed_dat::Bool)
+
+Container for VTU data.
+
+
+# Constructor
+- `dataarrays::Vector{XMLElement}`: Vector with all XML elements with tag `DataArray` of VTU file
+- `appendeddata::Vector{XMLElement}`: Vector with all XML elements with tag `AppendedData`
+- `headertype::Union{Type{UInt32},Type{UInt64}}` : Type of VTU header
+- `offsets::Vector{Int}` : Offset of each field data in the compressed appended data 
+- `compressed_dat::Bool` : True if data is compressed
+
+# Fields
+- `names::Vector{String}` : Name of each data field
+- `header::Vector{VTUHeader}` : Vector with [`VTUHeader`](@ref)s.
+- `data::Vector{VTUDataField}` : Vector with [`VTUDataField`](@ref)s
+- `interp_data::Vector{VTUDataField{Float64}}` : Vector with [`VTUDataField`](@ref)s
+- `idat::Vector{Int}` : Vector indexing the `data`-fields onto which the math operators should be applied
+
+For a [`VTUDataField`](@ref) to appear in `data`, the appropriate keyword has to be added via [`add_uncompress_keywords`](@ref) or [`add_interpolation_keywords`](@ref). 
+For a [`VTUDataField`](@ref) to appear in `interp_data` the appropriate keyword has to be added via [`add_interpolation_keywords`](@ref).
+For more information, see [`VTUKeyWords`](@ref).
+"""	
 struct VTUData
 	names::Vector{String}
 	header::Vector{VTUHeader}
@@ -99,17 +140,27 @@ end
 """
     VTUFile(name::String)
 
-loads a VTU file.
+Loads a VTU file.
 Don't forget to set the proper fieldnames via `set_uncompress_keywords` and `set_interpolation_keywords`
-Example
+
+# Constructor
+- `name::String`: path to vtu file
+
+# Fields
+- `name::String`: path to vtu file; destination for file writing
+- `xmlroot::XMLElement`: VTU file in XML represantation
+- `dataarrays::Vector{XMLElement}`: Vector with all XML elements with tag `DataArray` of VTU file
+- `headertype::Union{Type{UInt32},Type{UInt64}}`: type of header
+- `offsets::Vector{Int}`: Offset of each field data in the compressed appended data 
+- `data::VTUData`: Conatainer with  [`VTUData`](@ref)
+- `compressed_dat::Bool` : True if data is compressed
+
+# Example
 `
 set_uncompress_keywords("temperature","points")
 set_interpolation_keywords("temperature")
 vtufile = VTUFile("./path-to-vtu/example.vtu");
 `
-
-# Arguments
-- `name::String`: path to vtu file
 """	
 mutable struct VTUFile
 	name::String

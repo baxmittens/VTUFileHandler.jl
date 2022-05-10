@@ -70,7 +70,9 @@ write(vtu)
 
 ```@docs
 VTUHeader
+VTUDataField
 VTUFile
+VTUKeyWords
 ```
 
 ```@docs
