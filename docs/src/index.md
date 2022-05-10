@@ -51,7 +51,7 @@ The following math operators are implemented:
 In-place variations of the operators above are implemented as well.
 
 
-# Example
+## Example
 
 A three-dimensional cube with dimension (x,y,z) with 0<=x,y,z<=2 discretized by quadrilian elements with 27 points and 8 cells named `vox8.vtu` with a linear ramp in x-direction (f(x=0,y,z)=0, f(x=2,y,z)=0.8) as a result field termed `xramp` will be used as an example. The following set of instructions transform the result field from a linear ramp to a quadratic function in x-direction (displayed as a piecewise linear field due to the discretization):
 ```julia
@@ -66,4 +66,4 @@ vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
 write(vtu)
 ```
 
-![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
+![Cube with initial result field (left). Cube with manipulated result field (right).](../xramp1.PNG)

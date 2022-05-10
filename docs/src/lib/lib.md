@@ -1,10 +1,10 @@
-# Function Documentation
+# Library
 
-## Contens 
+## Contents 
 
 ```@contents
 Pages = ["lib.md"]
-Depth = 3
+Depth = 4
 ```
 
 ## Functions
