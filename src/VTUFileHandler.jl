@@ -141,7 +141,7 @@ end
     VTUFile(name::String)
 
 Loads a VTU file.
-Don't forget to set the proper fieldnames via `set_uncompress_keywords` and `set_interpolation_keywords`
+Don't forget to set the proper fieldnames via `set_uncompress_keywords` and `set_interpolation_keywords`.
 
 # Constructor
 - `name::String`: path to vtu file

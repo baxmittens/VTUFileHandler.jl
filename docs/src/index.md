@@ -4,8 +4,8 @@ A VTU library in the Julia language that implements an algebra for basic mathema
 ## Contents
 
 ```@contents
-Pages = ["index.md"]
-Depth = 3
+Pages = ["index.md", "lib/lib.md"]
+Depth = 2
 ```
 
 ## Introduction
