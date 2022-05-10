@@ -3,7 +3,7 @@
 ## Contents 
 
 ```@contents
-Pages = ["lib.md"]
+Pages = ["lib/lib.md"]
 Depth = 4
 ```
 
@@ -12,7 +12,7 @@ Depth = 4
 ### Index
 
 ```@index
-Pages = ["public.md"]
+Pages = ["lib/lib.md"]
 ```
 
 ### General functions

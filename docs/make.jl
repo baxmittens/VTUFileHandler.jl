@@ -7,7 +7,8 @@ makedocs(
 	pages = [
 		"Home" => "index.md"
 		"Library" => "lib/lib.md"
-	]
+	],
+	Depth = 3
 	)
 deploydocs(
     repo = "github.com/baxmittens/VTUFileHandler.jl.git"
