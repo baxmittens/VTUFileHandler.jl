@@ -19,7 +19,10 @@ By default, keywords were set that match results of the simulation software [Ope
 
 # Example
 
-If a VTU result file e.g. owns a field named `field1` to which the math operators should be applied, it can be added via `add_interpolation_keywords(["field1"]])`.
+If a VTU result file e.g. owns a field named `field1` to which the math operators should be applied, it can be added via: 
+```julia
+add_interpolation_keywords(["field1"]])
+```
 """	
 mutable struct VTUKeyWords
 	interpolation_keywords::Vector{String}

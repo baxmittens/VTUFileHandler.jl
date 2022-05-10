@@ -156,11 +156,11 @@ Don't forget to set the proper fieldnames via `set_uncompress_keywords` and `set
 - `compressed_dat::Bool` : True if data is compressed
 
 # Example
-`
+```julia
 set_uncompress_keywords("temperature","points")
 set_interpolation_keywords("temperature")
 vtufile = VTUFile("./path-to-vtu/example.vtu");
-`
+```
 """	
 mutable struct VTUFile
 	name::String
