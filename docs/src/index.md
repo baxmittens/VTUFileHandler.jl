@@ -2,7 +2,7 @@
 A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
 
 ```@contents
-Depth = 3
+Depth = 5
 ```
 
 ## Introduction
@@ -74,6 +74,8 @@ write(vtu)
 
 ```@index
 ```
+
+### Functions
 
 ```@docs
 VTUHeader
