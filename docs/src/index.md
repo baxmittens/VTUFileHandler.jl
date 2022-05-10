@@ -66,4 +66,4 @@ vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
 write(vtu)
 ```
 
-![Cube with initial result field (left). Cube with manipulated result field (right).](../xramp1.PNG)
+![Cube with initial result field (left). Cube with manipulated result field (right).](../../xramp1.PNG)
