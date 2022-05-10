@@ -14,8 +14,10 @@ Container for interpolation and uncompress keywords. Will be created as a module
 
 By default, keywords were set that match results of the simulation software [OpenGeoSys](https://www.opengeosys.org/). 
 
-`interpolation_keywords = ["displacement","epsilon","pressure_interpolated","sigma","temperature_interpolated"]`
-`uncompress_keywords = ["connectivity","offsets","bulk_node_ids","bulk_element_ids","Points","MaterialIDs"]`
+```julia
+interpolation_keywords = ["displacement","epsilon","pressure_interpolated","sigma","temperature_interpolated"]
+uncompress_keywords = ["connectivity","offsets","bulk_node_ids","bulk_element_ids","Points","MaterialIDs"]
+```
 
 # Example
 

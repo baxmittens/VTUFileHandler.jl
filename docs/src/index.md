@@ -1,8 +1,10 @@
 # VTUFileHandler.jl
 A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
 
+## Contents
+
 ```@contents
-Pages = ["index.md", "lib/lib.md"]
+Pages = ["index.md"]
 Depth = 3
 ```
 
@@ -65,5 +67,3 @@ vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
 vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
 write(vtu)
 ```
-
-![Cube with initial result field (left). Cube with manipulated result field (right).](../../xramp1.PNG)
