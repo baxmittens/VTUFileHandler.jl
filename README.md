@@ -65,6 +65,10 @@ vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
 write(vtu)
 ```
 
+# Contribution, report bugs and support
+
+Contributions to this project are welcome. Feel free to create a issue or pull request.
+
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
 
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
