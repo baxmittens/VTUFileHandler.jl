@@ -289,4 +289,13 @@ function addIntegrityChecks!(vtu::VTUFile,init=nothing)
 	return nothing
 end
 
+function Base.getindex(vtu::VTUFile, str::String)
+	ind = findfirst(x->replace(x,"\""=>"")==str,vtu.data.names)
+	if ind ∈ vtu.data.idat
+		ind = findfirst(x->x==ind,vtu.data.idat)
+		return vtu.data.interp_data[ind].dat
+	else
+		return vtu.data.data[ind].dat
+	end
+end
 
