@@ -67,5 +67,9 @@ write(vtu)
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
 
+## Contributions, report bugs and support
+
+Contributions to or questions about this project are welcome. Feel free to create a issue or a pull request.
+
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
 [docs-dev-url]: https://baxmittens.github.io/VTUFileHandler.jl/dev/
