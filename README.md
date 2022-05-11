@@ -67,7 +67,7 @@ write(vtu)
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
 
-### Contribution, report bugs and support
+## Contribution, report bugs and support
 
 Contributions to or questions about this project are welcome. Feel free to create a issue or pull request.
 
