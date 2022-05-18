@@ -200,7 +200,7 @@ end
 """
 	fill(ret::VTUFile, c::Float64)
 
-Fills all interpolation data with a c.
+Fills all entries of all interpolation data fields with a constant value `c::Float64`.
 
 # Arguments
 - `ret::VTUFile`: VTU file
