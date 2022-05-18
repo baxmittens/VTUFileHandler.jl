@@ -67,3 +67,7 @@ vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
 vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
 write(vtu)
 ```
+
+## Contributions, report bugs and support
+
+Contributions to or questions about this project are welcome. Feel free to create a issue or a pull request on [GitHub](https://github.com/baxmittens/VTUFileHandler.jl).
