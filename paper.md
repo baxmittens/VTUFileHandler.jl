@@ -110,10 +110,10 @@ vtu += vtu/4; # [0.0,...,0.8] -> [0.0,...,1.0]
 vtu *= 4.0; # [0,...,1.0] -> [0.0,...,4.0]
 vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
 vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
-rename!(vtu, "new_vox8.vtu")
+rename!(vtu, "vox8_1.vtu")
 write(vtu)
 ```
-Both, the initial (vox8.vtu) and the manipulated file (new_vox8.vtu) can be loaded and displayed with [Paraview](https://www.paraview.org/). The result is depicted in figure \autoref{fig:1}.
+Both, the initial (`vox8.vtu`) and the manipulated file (`vox8_1.vtu`) can be loaded and displayed with [Paraview](https://www.paraview.org/). The result is depicted in figure \autoref{fig:1}.
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG){ width=100% }
 
