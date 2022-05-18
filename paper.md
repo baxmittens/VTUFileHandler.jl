@@ -62,7 +62,7 @@ z * (x+y) &= z * x + z * y\\
 (ax) * (bx) &= (ab)(x * y)
 \end{align}
 
-The above obviously holds in general, if the $(*)$-operator acts point-wise:
+The above holds in general, if the $(*)$-operator acts scalar-wise:
 \begin{equation}
 (x*y)_i := x_i * y_i \quad \text{for all} \;\;  x,y \in A\;.
 \end{equation}
