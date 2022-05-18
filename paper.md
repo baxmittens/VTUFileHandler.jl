@@ -62,7 +62,7 @@ z * (x+y) &= z * x + z * y\\
 (ax) * (bx) &= (ab)(x * y)
 \end{align}
 
-The above obviously holds in general, if the $(*)$-operator acts point-wise:
+The above holds in general, if the $(*)$-operator acts scalar-wise:
 \begin{equation}
 (x*y)_i := x_i * y_i \quad \text{for all} \;\;  x,y \in A\;.
 \end{equation}
@@ -110,8 +110,10 @@ vtu += vtu/4; # [0.0,...,0.8] -> [0.0,...,1.0]
 vtu *= 4.0; # [0,...,1.0] -> [0.0,...,4.0]
 vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
 vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
+rename!(vtu, "vox8_1.vtu")
+write(vtu)
 ```
-The initial field and the resultant field of the above operations are displayed in figure \autoref{fig:1}.
+Both, the initial (`vox8.vtu`) and the manipulated file (`vox8_1.vtu`) can be loaded and displayed with [Paraview](https://www.paraview.org/). The result is depicted in figure \autoref{fig:1}.
 
 ![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG){ width=100% }
 

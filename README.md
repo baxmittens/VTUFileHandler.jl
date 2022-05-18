@@ -1,9 +1,10 @@
 # VTUFileHandler.jl
 A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
 
-See the [documentation](https://baxmittens.github.io/VTUFileHandler.jl/dev/):
-
 [![][docs-dev-img]][docs-dev-url]
+[![CI](https://github.com/baxmittens/VTUFileHandler.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/baxmittens/VTUFileHandler.jl/actions/workflows/CI.yml)
+
+See the [documentation](https://baxmittens.github.io/VTUFileHandler.jl/dev/)
 
 ## Introduction
 
@@ -69,7 +70,7 @@ write(vtu)
 
 ## Contributions, report bugs and support
 
-Contributions to or questions about this project are welcome. Feel free to create a issue or a pull request.
+Contributions to or questions about this project are welcome. Feel free to create a issue or a pull request on [GitHub](https://github.com/baxmittens/VTUFileHandler.jl).
 
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
 [docs-dev-url]: https://baxmittens.github.io/VTUFileHandler.jl/dev/
