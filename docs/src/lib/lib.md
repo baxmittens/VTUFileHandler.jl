@@ -34,6 +34,20 @@ set_interpolation_keywords
 add_interpolation_keywords
 ```
 
+### Utils
+
+```@docs
+getindex(::VTUFile, ::String)
+rename!
+deepcopy(::VTUFile)
+similar(::VTUFile)
+fill!(::VTUFile, ::Float64)
+zero(::VTUFile)
+one(::VTUFile)
+empty!(::VTUFile)
+empty(::VTUFile)
+```
+
 ### IO-Functions
 
 ```@docs

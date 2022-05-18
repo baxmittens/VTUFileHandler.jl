@@ -156,38 +156,97 @@ function Base.write(vtufile::VTUFile, add_timestamp::Bool=true)
 	close(f)
 end
 
+"""
+	rename!(vtuf::VTUFile,name::String)
+
+Renames a [`VTUFile`](@ref) to `name`. This determines the write-location. 
+
+# Arguments
+- `vtuf::VTUFile`: VTU file
+- `name::String`: Name, or write location, of vtu file 
+"""
 function rename!(vtuf::VTUFile,name::String)
 	vtuf.name = name
 	return nothing
 end
 
+"""
+	deepcopy(vtuf::VTUFile)
+
+Deepcopy of a [`VTUFile`](@ref). 
+Only data that will be altered by algebraic operations is deepcopied at the moment due to efficiency.
+
+# Arguments
+- `vtuf::VTUFile`: VTU file
+"""
 function Base.deepcopy(vtuf::VTUFile)
 	return VTUFile(vtuf.name,vtuf.xmlroot,vtuf.dataarrays,vtuf.appendeddata,vtuf.headertype,vtuf.offsets,similar(vtuf.data),vtuf.compressed_dat)
 end
 
+"""
+	similar(vtuf::VTUFile)
+
+Congruent [`deepcopy`](@ref).
+
+# Arguments
+- `vtuf::VTUFile`: VTU file
+"""
 function Base.similar(vtuf::VTUFile)
 	ret = deepcopy(vtuf)
 	#foreach(fill_zeros,ret.data.data)
 	return ret
 end
 
+"""
+	fill(ret::VTUFile, c::Float64)
+
+Fills all interpolation data with a c.
+
+# Arguments
+- `ret::VTUFile`: VTU file
+- `c::Float64`: Float all data is filled with
+"""
 function Base.fill!(ret::VTUFile, c::Float64)
 	fill!(ret.data,c)
 	return nothing
 end
 
+"""
+	zero(vtu::VTUFile)
+
+Shortcut for [`fill`](@ref)(vtu,0.0).
+
+# Arguments
+- `vtu::VTUFile`: VTU file
+"""
 function Base.zero(vtu::VTUFile)
 	ret = similar(vtu)
 	fill!(ret,0.0)
 	return ret
 end
 
+"""
+	one(vtu::VTUFile)
+
+Shortcut for [`fill`](@ref)(vtu,1.0).
+
+# Arguments
+- `vtu::VTUFile`: VTU file
+"""
 function Base.one(vtu::VTUFile)
 	ret = similar(vtu)
 	fill!(ret,1.0)
 	return ret
 end
 
+"""
+	empty(vtu::VTUFile)
+
+Empties each data field in [`VTUData`](@ref).
+
+# Arguments
+- `vtu::VTUFile`: VTU file
+"""
 function Base.empty!(vtu::VTUFile)
 	for i = 1:length(vtu.data.data)
 		empty!(vtu.data.data[i].dat)
@@ -195,6 +254,14 @@ function Base.empty!(vtu::VTUFile)
 	return nothing
 end
 
+"""
+	empty(vtu::VTUFile)
+
+Returns a empty copy of `vtu`. 
+
+# Arguments
+- `vtu::VTUFile`: VTU file
+"""
 function Base.empty(vtu::VTUFile)
 	ret = similar(vtu)
 	empty!(ret)
@@ -289,6 +356,20 @@ function addIntegrityChecks!(vtu::VTUFile,init=nothing)
 	return nothing
 end
 
+"""
+	getindex(vtu::VTUFile, str::String)
+
+Return the `str`-named data field of vtu. 
+
+# Arguments
+- `vtu::VTUFile`: VTU file
+- `str::String`: Name of data field
+
+# Example
+```julia
+displacementfield = vtu["displacement"]
+```
+"""
 function Base.getindex(vtu::VTUFile, str::String)
 	ind = findfirst(x->replace(x,"\""=>"")==str,vtu.data.names)
 	if ind ∈ vtu.data.idat
