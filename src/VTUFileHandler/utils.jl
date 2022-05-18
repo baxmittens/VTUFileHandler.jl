@@ -186,7 +186,7 @@ end
 """
 	similar(vtuf::VTUFile)
 
-Congruent [`deepcopy`](@ref).
+Congruent to [`deepcopy`](@ref).
 
 # Arguments
 - `vtuf::VTUFile`: VTU file
@@ -214,7 +214,7 @@ end
 """
 	zero(vtu::VTUFile)
 
-Shortcut for [`fill`](@ref)(vtu,0.0).
+Shortcut for [`fill!`](@ref)(vtu,0.0).
 
 # Arguments
 - `vtu::VTUFile`: VTU file
@@ -228,7 +228,7 @@ end
 """
 	one(vtu::VTUFile)
 
-Shortcut for [`fill`](@ref)(vtu,1.0).
+Shortcut for [`fill!`](@ref)(vtu,1.0).
 
 # Arguments
 - `vtu::VTUFile`: VTU file

@@ -38,7 +38,7 @@ add_interpolation_keywords
 
 ```@docs
 getindex(::VTUFile, ::String)
-rename!
+VTUFileHandler.rename!
 deepcopy(::VTUFile)
 similar(::VTUFile)
 fill!(::VTUFile, ::Float64)
