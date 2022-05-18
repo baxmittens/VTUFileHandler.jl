@@ -115,7 +115,7 @@ write(vtu)
 ```
 Both, the initial (`vox8.vtu`) and the manipulated file (`vox8_1.vtu`) can be loaded and displayed with [Paraview](https://www.paraview.org/). The result is depicted in figure \autoref{fig:1}.
 
-![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG){ width=100% }
+![Cube with initial result field (left). Cube with manipulated result field (right). Rendered with [Paraview](https://www.paraview.org/). \label{fig:1}](xramp1.PNG){ width=100% }
 
 # Conclusion
 
