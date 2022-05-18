@@ -63,10 +63,11 @@ vtu += vtu/4; # [0.0,...,0.8] -> [0.0,...,1.0]
 vtu *= 4.0; # [0,...,1.0] -> [0.0,...,4.0]
 vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
 vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
+rename!(vtu, ”vox8_1.vtu”)
 write(vtu)
 ```
 
-![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
+![Cube with initial result field (left). Cube with manipulated result field (right). Rendered with [Paraview](https://www.paraview.org/)\label{fig:1}](xramp1.PNG).
 
 ## Contributions, report bugs and support
 
