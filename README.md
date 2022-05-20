@@ -1,9 +1,10 @@
 # VTUFileHandler.jl
 A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
 
-See the [documentation](https://baxmittens.github.io/VTUFileHandler.jl/dev/):
-
 [![][docs-dev-img]][docs-dev-url]
+[![CI](https://github.com/baxmittens/VTUFileHandler.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/baxmittens/VTUFileHandler.jl/actions/workflows/CI.yml)
+
+See the [documentation](https://baxmittens.github.io/VTUFileHandler.jl/dev/)
 
 ## Introduction
 
@@ -62,14 +63,15 @@ vtu += vtu/4; # [0.0,...,0.8] -> [0.0,...,1.0]
 vtu *= 4.0; # [0,...,1.0] -> [0.0,...,4.0]
 vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
 vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
+rename!(vtu, ”vox8_1.vtu”)
 write(vtu)
 ```
 
-![Cube with initial result field (left). Cube with manipulated result field (right).\label{fig:1}](xramp1.PNG)
+![Cube with initial result field (left). Cube with manipulated result field (right). Rendered with [Paraview](https://www.paraview.org/)\label{fig:1}](xramp1.PNG).
 
 ## Contributions, report bugs and support
 
-Contributions to or questions about this project are welcome. Feel free to create a issue or a pull request.
+Contributions to or questions about this project are welcome. Feel free to create a issue or a pull request on [GitHub](https://github.com/baxmittens/VTUFileHandler.jl).
 
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
 [docs-dev-url]: https://baxmittens.github.io/VTUFileHandler.jl/dev/
