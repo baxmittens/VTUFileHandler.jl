@@ -29,7 +29,7 @@ There are other approaches to writing and reading VTU, or more generally VTK, fi
 
 # Introduction
 
-The [Visualization Toolkit](https://vtk.org/) (VTK) is an open source software project for manipulating and displaying scientific data. It supports a variety of visualization algorithms and advanced modeling techniques such as implicit modeling and mesh smoothing. It defines three types of file formats: a legacy format, a XML format and a HDF file format. Since the HDF file format is fairly new, the XML file format is the most used so far and will be also used here. VTK datasets are classified into one of two categories: structured (tensor grids, image data) and unstructured (meshes). We will restrict ourselves to unstructed datasets in the following since modern simulation results are often times performed on complex geometries. Simulation results saved as VTU file can be displayed and investiged with the Paraview application.
+The [Visualization Toolkit](https://vtk.org/) (VTK) is an open source software project for manipulating and displaying scientific data. It supports a variety of visualization algorithms and advanced modeling techniques such as implicit modeling and mesh smoothing. It defines three types of file formats: a legacy format, a XML format and a HDF file format. Since the HDF file format is fairly new, the XML file format is the most used so far and will be also used here. VTK datasets are classified into one of two categories: structured (tensor grids, image data) and unstructured (meshes). We will restrict ourselves to unstructured datasets in the following since modern simulation results are often times performed on complex geometries. Simulation results saved as VTU file can be displayed and investiged with the Paraview application.
 
 [Julia](https://julialang.org/) is a fast and dynamic programming language which enables fast prototyping as well as efficiently implemented software solutions. With its in-built features for numerical mathematics and distributed computing, it very well suited for implementing computational physics. However, since Julia is a newer programming language, it often time lacks the native connections to other software projects or industry standards that exist in Python, for example.
 
@@ -51,7 +51,7 @@ The most prominent method for computing the expected value of the problem descri
 \mathbb{E}[\mathbf{Y}(\boldsymbol{\xi})] \approx \tilde{\mathbb{E}}[\mathcal{M}(\mathbf{X}(\boldsymbol{\xi}))] = \frac{1}{M} \sum\limits_{i=1}^M \mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))\,,\quad
 \tilde{\xi}_{ij} \sim \mathcal{U}(0,1)\,.
 \end{equation} 
-From (\ref{eq:montecarlo}) we can conlcude that if $\mathbf{Y}(\tilde{\boldsymbol{\xi}}_i)=\mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))$ is a deterministic VTU result file at position $\tilde{\boldsymbol{\xi}}_i$ in the sample space, it is sufficient to implement the operators `+(::VTUFile,::VTUFile)` and `/(::VTUFile,::Number)` to compute the expected value on the entire domain by help of the Monte-Carlo method.
+From (\ref{eq:montecarlo}) we can conclude that if $\mathbf{Y}(\tilde{\boldsymbol{\xi}}_i)=\mathcal{M}(\mathbf{X}(\tilde{\boldsymbol{\xi}}_i))$ is a deterministic VTU result file at position $\tilde{\boldsymbol{\xi}}_i$ in the sample space, it is sufficient to implement the operators `+(::VTUFile,::VTUFile)` and `/(::VTUFile,::Number)` to compute the expected value on the entire domain by help of the Monte-Carlo method.
 
 # Definition of a VTUFile algebra
 
