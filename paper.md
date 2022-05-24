@@ -74,7 +74,7 @@ The [VTUFileHandler](https://github.com/baxmittens/VTUFileHandler.jl) will event
 
 1. The VTU file must be in binary format and, in addition, can be Zlib compressed.
 2. Operators can only be applied to VTU files that share the same topology. The user must ensure that this condition is met.
-3. The data type of numerical fields of the VTU file, for which operators should be applied, have to be `Float64`.
+3. The data type of numerical fields of the VTU file, for which operators should be applied, has to be `Float64`.
 
 # Features
 The VTUFileHandler implements a basic VTU reader and writer through the functions:
