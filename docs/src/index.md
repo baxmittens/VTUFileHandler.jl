@@ -1,5 +1,5 @@
 # VTUFileHandler.jl
-A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data.
+A VTU library in the Julia language that implements an algebra for basic mathematical operations on VTU data ([link to GitHub repository](https://github.com/baxmittens/VTUFileHandler.jl)).
 
 ## Contents
 
@@ -65,5 +65,10 @@ vtu += vtu/4; # [0.0,...,0.8] -> [0.0,...,1.0]
 vtu *= 4.0; # [0,...,1.0] -> [0.0,...,4.0]
 vtu -= 2.0; # [0,...,4.0] -> [-2.0,...,2.0]
 vtu ^= 2.0; # [-2.0,...,2.0] -> [4.0,...,0.0,...,4.0]
+rename!(vtu,"vox8_1.vtu")
 write(vtu)
 ```
+
+## Contributions, report bugs and support
+
+Contributions to or questions about this project are welcome. Feel free to create a issue or a pull request on [GitHub](https://github.com/baxmittens/VTUFileHandler.jl).
