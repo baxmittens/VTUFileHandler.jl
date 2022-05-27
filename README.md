@@ -3,6 +3,7 @@ A VTU library in the Julia language that implements an algebra for basic mathema
 
 [![][docs-dev-img]][docs-dev-url]
 [![CI](https://github.com/baxmittens/VTUFileHandler.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/baxmittens/VTUFileHandler.jl/actions/workflows/CI.yml)
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.04300/status.svg)](https://doi.org/10.21105/joss.04300)
 
 See the [documentation](https://baxmittens.github.io/VTUFileHandler.jl/dev/)
 
