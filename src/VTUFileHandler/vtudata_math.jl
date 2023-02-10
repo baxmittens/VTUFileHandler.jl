@@ -1,6 +1,3 @@
-import LinearAlgebra.mul!
-
-
 function add!(zd1::VTUDataField{Float64}, zd2::VTUDataField{Float64})
 	@inbounds for i in 1:length(zd1.dat)
 		zd1.dat[i] += zd2.dat[i]
@@ -28,7 +25,6 @@ function mul!(zd1::VTUDataField{Float64}, c::Number)
 	end
 	return nothing
 end
-
 
 function mul!(zd1::VTUDataField{Float64}, zd2::VTUDataField{Float64}, zd3::VTUDataField{Float64})
 	@inbounds for i in 1:length(zd1.dat)

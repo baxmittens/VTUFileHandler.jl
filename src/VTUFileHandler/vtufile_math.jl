@@ -1,6 +1,3 @@
-import LinearAlgebra.mul!
-import Base: +,-,*,/,^
-
 function add!(zd1::VTUFile, zd2::VTUFile)
 	add!(zd1.data,zd2.data)
 	return nothing

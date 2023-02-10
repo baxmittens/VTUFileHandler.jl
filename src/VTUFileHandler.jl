@@ -3,6 +3,11 @@ module VTUFileHandler
 using Base64, CodecZlib
 using XMLParser
 
+import LinearAlgebra.mul!
+import Base: +,-,*,/,^
+import AltInplaceOperationInterface: add!, minus!, pow!, max!, min!
+
+
 include(joinpath(".","VTUFileHandler","defs.jl"))
 
 """
