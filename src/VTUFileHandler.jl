@@ -71,14 +71,14 @@ struct VTUDataField{T}
 end
 
 """
-    VTUData(dataarrays::Vector{XMLElement},appendeddata::Vector{XMLElement},headertype::Union{Type{UInt32},Type{UInt64}},offsets::Vector{Int},compressed_dat::Bool)
+    VTUData(dataarrays::Vector{AbstractAbstractXMLElement},appendeddata::Vector{AbstractAbstractXMLElement},headertype::Union{Type{UInt32},Type{UInt64}},offsets::Vector{Int},compressed_dat::Bool)
 
 Container for VTU data.
 
 
 # Constructor
-- `dataarrays::Vector{XMLElement}`: Vector with all XML elements with tag `DataArray` of VTU file
-- `appendeddata::Vector{XMLElement}`: Vector with all XML elements with tag `AppendedData`
+- `dataarrays::Vector{AbstractAbstractXMLElement}`: Vector with all XML elements with tag `DataArray` of VTU file
+- `appendeddata::Vector{AbstractAbstractXMLElement}`: Vector with all XML elements with tag `AppendedData`
 - `headertype::Union{Type{UInt32},Type{UInt64}}` : Type of VTU header
 - `offsets::Vector{Int}` : Offset of each field data in the compressed appended data 
 - `compressed_dat::Bool` : True if data is compressed
@@ -100,8 +100,8 @@ struct VTUData
 	data::Vector{VTUDataField}
 	interp_data::Vector{VTUDataField{Float64}}
 	idat::Vector{Int}
-	VTUData(names,header,data,interp_data,idat) = new(names,header,data,interp_data,idat)
-	function VTUData(dataarrays::Vector{XMLElement},appendeddata::Vector{XMLElement},headertype::Union{Type{UInt32},Type{UInt64}},offsets::Vector{Int},compressed_dat::Bool)
+	VTUData(names::Vector{String},header::Vector{VTUHeader},data::Vector{VTUDataField},interp_data::Vector{VTUDataField{Float64}},idat::Vector{Int}) = new(names,header,data,interp_data,idat)
+	function VTUData(dataarrays::Vector{AbstractXMLElement},appendeddata::Vector{AbstractXMLElement},headertype::Union{Type{UInt32},Type{UInt64}},offsets::Vector{Int},compressed_dat::Bool)
 		names = Vector{String}()
 		data = Vector{VTUDataField}()
 		header = Vector{VTUHeader}()
@@ -153,8 +153,8 @@ Don't forget to set the proper fieldnames via `set_uncompress_keywords` and `set
 
 # Fields
 - `name::String`: path to vtu file; destination for file writing
-- `xmlroot::XMLElement`: VTU file in XML represantation
-- `dataarrays::Vector{XMLElement}`: Vector with all XML elements with tag `DataArray` of VTU file
+- `xmlroot::AbstractXMLElement`: VTU file in XML represantation
+- `dataarrays::Vector{AbstractXMLElement}`: Vector with all XML elements with tag `DataArray` of VTU file
 - `headertype::Union{Type{UInt32},Type{UInt64}}`: type of header
 - `offsets::Vector{Int}`: Offset of each field data in the compressed appended data 
 - `data::VTUData`: Conatainer with  [`VTUData`](@ref)
@@ -169,9 +169,9 @@ vtufile = VTUFile("./path-to-vtu/example.vtu");
 """	
 mutable struct VTUFile
 	name::String
-	xmlroot::XMLElement
-	dataarrays::Vector{XMLElement}
-	appendeddata::Vector{XMLElement}
+	xmlroot::AbstractXMLElement
+	dataarrays::Vector{AbstractXMLElement}
+	appendeddata::Vector{AbstractXMLElement}
 	headertype::Union{Type{UInt32},Type{UInt64}}
 	offsets::Vector{Int}
 	data::VTUData
