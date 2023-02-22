@@ -5,7 +5,7 @@ using XMLParser
 
 import LinearAlgebra.mul!
 import Base: +,-,*,/,^
-import AltInplaceOperationInterface: add!, minus!, pow!, max!, min!
+import AltInplaceOpsInterface: add!, minus!, pow!, max!, min!
 
 
 include(joinpath(".","VTUFileHandler","defs.jl"))
