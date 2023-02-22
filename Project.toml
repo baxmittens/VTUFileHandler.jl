@@ -14,6 +14,7 @@ StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 TranscodingStreams = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
 XMLParser = "b09a1ce3-015a-45b4-89ae-f27efbd2c76d"
+AltInplaceOpsInterface = "d59240d3-86bd-48c4-8b44-fa29ea3b0621"
 
 [compat]
 CodecZlib = "0.7.0"
