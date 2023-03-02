@@ -200,7 +200,7 @@ mutable struct VTUFile
 		offsets = Vector{Int}()
 		for el in dataarrays
 			if hasAttributekey(el,"offset")
-				_offset = getAttribute(el,"offset")
+				_offset = replace(getAttribute(el,"offset"),"\""=>"")
 				offset = parse(Int,_offset)
 				push!(offsets,offset)
 			else
