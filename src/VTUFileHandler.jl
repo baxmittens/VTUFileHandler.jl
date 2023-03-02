@@ -189,19 +189,18 @@ mutable struct VTUFile
 		end
 		dataarrays = getElements(xmlroot,"DataArray")
 		appendeddata = getElements(xmlroot,"AppendedData")
-		vtkfile = getElements(xmlroot,"VTKFile")
-		@assert length(vtkfile) == 1
+		#vtkfile = getElements(xmlroot,"VTKFile")
+		#@assert length(vtkfile) == 1
 		compressed_dat = false
-		if hasAttributekey(vtkfile[1],"compressor")
+		if hasAttributekey(xmlroot,"compressor")
 			compressed_dat = true
 		end
-		#headertype = eval(Symbol(getAttribute(first(vtkfile),"header_type")))
-		attr = replace(getAttribute(first(vtkfile),"header_type"),"\""=>"")
+		attr = getAttribute(xmlroot,"header_type")
 		headertype = eval(Meta.parse(attr))
 		offsets = Vector{Int}()
 		for el in dataarrays
 			if hasAttributekey(el,"offset")
-				_offset = replace(getAttribute(el,"offset"),"\""=>"")
+				_offset = getAttribute(el,"offset")
 				offset = parse(Int,_offset)
 				push!(offsets,offset)
 			else
