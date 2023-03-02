@@ -177,8 +177,8 @@ mutable struct VTUFile
 	offsets::Vector{Int}
 	data::VTUData
 	compressed_dat::Bool
-	VTUFile(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data) = new(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,true)
-	VTUFile(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,compr_dat) = new(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,compr_dat)
+	VTUFile(name,xmlfile,xmlroot,dataarrays,appendeddata,headertype,offsets,data) = new(name,xmlfile,xmlroot,dataarrays,appendeddata,headertype,offsets,data,true)
+	VTUFile(name,xmlfile,xmlroot,dataarrays,appendeddata,headertype,offsets,data,compr_dat) = new(name,xmlfile,xmlroot,dataarrays,appendeddata,headertype,offsets,data,compr_dat)
 	function VTUFile(name::String)
 		#state = IOState(name);
 		#xmlroot = readXMLElement(state);

@@ -181,7 +181,7 @@ Only data that will be altered by algebraic operations is deepcopied at the mome
 - `vtuf::VTUFile`: VTU file
 """
 function Base.deepcopy(vtuf::VTUFile)
-	return VTUFile(vtuf.name,vtuf.xmlroot,vtuf.dataarrays,vtuf.appendeddata,vtuf.headertype,vtuf.offsets,similar(vtuf.data),vtuf.compressed_dat)
+	return VTUFile(vtuf.name,vtuf.xmlfile,vtuf.xmlroot,vtuf.dataarrays,vtuf.appendeddata,vtuf.headertype,vtuf.offsets,similar(vtuf.data),vtuf.compressed_dat)
 end
 
 """
