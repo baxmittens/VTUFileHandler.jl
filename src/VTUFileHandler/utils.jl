@@ -151,9 +151,10 @@ function Base.write(vtufile::VTUFile, add_timestamp::Bool=true)
 		@assert length(splitstr) == 2 && isempty(splitstr[end])
 		name = splitstr[1] * "_" * timestamp() * ".vtu"
 	end
-	f = open(name,"w")
-	writeXMLElement(f,vtufile.xmlroot)
-	close(f)
+	#f = open(name,"w")
+	#writeXMLElement(f,vtufile.xmlroot)
+	#close(f)
+	write(name, vtufile.xmlfile)
 end
 
 """

@@ -169,6 +169,7 @@ vtufile = VTUFile("./path-to-vtu/example.vtu");
 """	
 mutable struct VTUFile
 	name::String
+	xmlfile::XMLFile
 	xmlroot::AbstractXMLElement
 	dataarrays::Vector{AbstractXMLElement}
 	appendeddata::Vector{AbstractXMLElement}
@@ -179,8 +180,10 @@ mutable struct VTUFile
 	VTUFile(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data) = new(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,true)
 	VTUFile(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,compr_dat) = new(name,xmlroot,dataarrays,appendeddata,headertype,offsets,data,compr_dat)
 	function VTUFile(name::String)
-		state = IOState(name);
-		xmlroot = readXMLElement(state);
+		#state = IOState(name);
+		#xmlroot = readXMLElement(state);
+		xmlfile = read(XMLFile, name)
+		xmlroot = xmlfile.element
 		if !isempty(getElements(xmlroot,"FieldData"))
 			deletefieldata!(xmlroot)
 		end
@@ -205,7 +208,7 @@ mutable struct VTUFile
 				push!(offsets,0)
 			end
 		end
-		retval = new(name,xmlroot,dataarrays,appendeddata,headertype,offsets,VTUData(dataarrays,appendeddata,headertype,offsets,compressed_dat),compressed_dat)
+		retval = new(name,xmlfile,xmlroot,dataarrays,appendeddata,headertype,offsets,VTUData(dataarrays,appendeddata,headertype,offsets,compressed_dat),compressed_dat)
 		return retval	
 	end
 end
