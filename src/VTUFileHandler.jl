@@ -3,7 +3,7 @@ module VTUFileHandler
 using Base64, CodecZlib
 using XMLParser
 
-import LinearAlgebra.mul!
+import LinearAlgebra: mul!, norm
 import Base: +,-,*,/,^
 import AltInplaceOpsInterface: add!, minus!, pow!, max!, min!
 

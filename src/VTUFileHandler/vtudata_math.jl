@@ -68,6 +68,10 @@ function min!(zd1::VTUDataField{Float64}, zd2::VTUDataField{Float64})
 	return nothing
 end
 
+function norm(zd::VTUDataField{Float64})
+	return return norm(zd.dat)
+end
+
 function add!(zd1::VTUData, zd2::VTUData)
 	for (dat1,dat2) in zip(zd1.interp_data,zd2.interp_data)
 		add!(dat1,dat2)
@@ -217,4 +221,9 @@ function ^(tpf::VTUData, a::T) where T<:Number
 	add!(ret,tpf)
 	pow!(ret,a)
 	return ret
+end
+
+function norm(dat::VTUData)
+	interp_data = dat.interp_data
+	return max(map(x->norm(x),interp_data)...)
 end

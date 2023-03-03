@@ -18,7 +18,6 @@ function mul!(zd1::VTUFile, c::Number)
 	return nothing
 end
 
-
 function mul!(zd1::VTUFile, zd2::VTUFile, zd3::VTUFile)
 	mul!(zd1.data, zd2.data, zd3.data)
 	return nothing
@@ -136,3 +135,6 @@ function ^(tpf::VTUFile, a::T) where T<:Number
 	return ret
 end
 
+function norm(tpf::VTUFile)
+	return norm(tpf.data)
+end
