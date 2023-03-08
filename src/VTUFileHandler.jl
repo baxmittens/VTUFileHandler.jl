@@ -132,11 +132,13 @@ include(joinpath(".","VTUFileHandler","vtudata_math.jl"))
 function deletefieldata!(xmlroot)
 	dataarrays = getElements(xmlroot,"DataArray")
 	fielddata = getElements(xmlroot,"FieldData")[1]
-	_offset = parse(Int,replace(getAttribute(dataarrays[length(fielddata.content)+1],"offset"),"\""=>""))
+	#_offset = parse(Int,replace(getAttribute(dataarrays[length(fielddata.content)+1],"offset"),"\""=>""))
+	_offset = parse(Int,getAttribute(dataarrays[length(fielddata.content)+1],"offset"))
 	empty!(fielddata.content)
 	els = getElements(xmlroot,"DataArray")
 	for el in els
-		setAttribute(el,"offset",string(parse(Int,replace(getAttribute(el,"offset"),"\""=>""))-_offset))
+		#setAttribute(el,"offset",string(parse(Int,replace(getAttribute(el,"offset"),"\""=>""))-_offset))
+		setAttribute(el,"offset",string(parse(Int,getAttribute(el,"offset"))-_offset))
 	end
 	appendeddata = getElements(xmlroot,"AppendedData")
 	appendeddata[1].content[1] = String(deleteat!(collect(appendeddata[1].content[1]),2:_offset+1))
@@ -200,7 +202,8 @@ mutable struct VTUFile
 		offsets = Vector{Int}()
 		for el in dataarrays
 			if hasAttributekey(el,"offset")
-				_offset = replace(getAttribute(el,"offset"),"\""=>"")
+				#_offset = replace(getAttribute(el,"offset"),"\""=>"")
+				_offset = getAttribute(el,"offset")
 				offset = parse(Int,_offset)
 				push!(offsets,offset)
 			else
