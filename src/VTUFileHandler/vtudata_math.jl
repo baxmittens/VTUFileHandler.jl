@@ -227,3 +227,11 @@ function norm(dat::VTUData)
 	interp_data = dat.interp_data
 	return max(map(x->norm(x),interp_data)...)
 end
+
+function <(tpf1::VTUData, tpf2::VTUData)
+	ret = true
+	for (dat1,dat2) in zip(zd1.interp_data,zd2.interp_data)
+		ret *= all(dat1.dat .< dat2.dat)
+	end
+	return ret
+end
