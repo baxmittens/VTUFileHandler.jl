@@ -228,10 +228,10 @@ function norm(dat::VTUData)
 	return max(map(x->norm(x),interp_data)...)
 end
 
-function <(zd1::VTUData, zd2::VTUData)
+function <=(zd1::VTUData, zd2::VTUData)
 	ret = true
 	for (dat1,dat2) in zip(zd1.interp_data,zd2.interp_data)
-		ret *= all(abs.(dat1.dat) .< abs.(dat2.dat))
+		ret *= all(abs.(dat1.dat) .<= abs.(dat2.dat))
 	end
 	return ret
 end

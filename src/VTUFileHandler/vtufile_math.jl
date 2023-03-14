@@ -139,6 +139,6 @@ function norm(tpf::VTUFile)
 	return norm(tpf.data)
 end
 
-function <(tpf1::VTUFile, tpf2::VTUFile)
-	return tpf1.data<tpf2.data
+function <=(tpf1::VTUFile, tpf2::VTUFile)
+	return tpf1.data <= tpf2.data
 end
