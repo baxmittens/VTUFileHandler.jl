@@ -69,7 +69,7 @@ function min!(zd1::VTUDataField{Float64}, zd2::VTUDataField{Float64})
 end
 
 function norm(zd::VTUDataField{Float64})
-	return return norm(zd.dat)
+	return norm(zd.dat)
 end
 
 function add!(zd1::VTUData, zd2::VTUData)
