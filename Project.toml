@@ -2,7 +2,7 @@ name = "VTUFileHandler"
 uuid = "6e9f8158-41af-4c42-b493-3202dfdd0db4"
 license = "MIT"
 authors = ["Maximilian Bittens <maximilian.bittens@bgr.de>"]
-version = "1.0.0"
+version = "1.0.1"
 
 [deps]
 Base64 = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
@@ -18,7 +18,7 @@ AltInplaceOpsInterface = "d59240d3-86bd-48c4-8b44-fa29ea3b0621"
 
 [compat]
 CodecZlib = "0.7.0"
-TranscodingStreams = "0.9.6"
+TranscodingStreams = "0.9.6, 0.10, 0.11"
 julia = "1"
 StaticArrays = "^1.4.4"
 Test = "1"
